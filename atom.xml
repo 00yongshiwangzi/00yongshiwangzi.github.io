@@ -6,7 +6,7 @@
   <link href="https://00yongshiwangzi.github.io/atom.xml" rel="self"/>
   
   <link href="https://00yongshiwangzi.github.io/"/>
-  <updated>2020-09-26T07:40:35.183Z</updated>
+  <updated>2020-09-27T11:55:47.540Z</updated>
   <id>https://00yongshiwangzi.github.io/</id>
   
   <author>
@@ -15,6 +15,49 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title></title>
+    <link href="https://00yongshiwangzi.github.io/posts/0.html"/>
+    <id>https://00yongshiwangzi.github.io/posts/0.html</id>
+    <published>2020-09-27T11:49:32.656Z</published>
+    <updated>2020-09-27T11:55:47.540Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;@&lt;a</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="https://00yongshiwangzi.github.io/posts/0.html"/>
+    <id>https://00yongshiwangzi.github.io/posts/0.html</id>
+    <published>2020-09-26T07:41:10.649Z</published>
+    <updated>2020-09-27T11:55:52.327Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt; 前言：刚在数据库课上学了数据库操作语言，对于英语不好的我来说又要记不少单词，趁着这次作业，把刚学的一些语法记一下&lt;br&gt; 注：&lt;br&gt; 1.文中路径和文件名请自行替换&lt;br&gt; 2.报错大多是因为一些细微之差，比如冒号引号的缺失，请多多注意&lt;/p&gt;
+&lt;h1</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>Hello World</title>
