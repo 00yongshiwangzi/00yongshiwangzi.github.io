@@ -6,7 +6,7 @@
   <link href="https://00yongshiwangzi.github.io/atom.xml" rel="self"/>
   
   <link href="https://00yongshiwangzi.github.io/"/>
-  <updated>2020-09-26T07:40:35.183Z</updated>
+  <updated>2020-09-27T10:58:05.833Z</updated>
   <id>https://00yongshiwangzi.github.io/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title></title>
+    <link href="https://00yongshiwangzi.github.io/posts/0.html"/>
+    <id>https://00yongshiwangzi.github.io/posts/0.html</id>
+    <published>2020-09-27T11:49:32.656Z</published>
+    <updated>2020-09-27T10:58:05.833Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;@&lt;a</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>Hello World</title>
