@@ -6,7 +6,7 @@
   <link href="https://00yongshiwangzi.github.io/atom.xml" rel="self"/>
   
   <link href="https://00yongshiwangzi.github.io/"/>
-  <updated>2020-09-27T12:36:14.357Z</updated>
+  <updated>2020-09-28T12:34:57.977Z</updated>
   <id>https://00yongshiwangzi.github.io/</id>
   
   <author>
@@ -17,11 +17,55 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title></title>
+    <link href="https://00yongshiwangzi.github.io/posts/0.html"/>
+    <id>https://00yongshiwangzi.github.io/posts/0.html</id>
+    <published>2020-09-28T12:35:05.686Z</published>
+    <updated>2020-09-28T12:34:57.977Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt; 刚在数据库课上学了数据库操作语言，对于英语不好的我来说又要记不少单词，趁着这次作业，把刚学的一些语法记一下&lt;br&gt; 注：&lt;br&gt;1.文中路径和文件名请自行替换&lt;br&gt; 2.报错大多是因为一些细微之差，比如冒号引号的缺失，请多多注意&lt;/p&gt;
+&lt;h1</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="https://00yongshiwangzi.github.io/posts/0.html"/>
+    <id>https://00yongshiwangzi.github.io/posts/0.html</id>
+    <published>2020-09-28T12:34:27.330Z</published>
+    <updated>2020-09-28T12:33:40.100Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;写在前面：本人CTF小白，在web方面的水平更是不高，因此如果文中有不足之处，还请指出。写本文主要有两个目的：一是防止自己将做过的题目知识点遗忘，二是希望可以在一定程度上帮助到像我一样的小白。&lt;/p&gt;
+&lt;p&gt;本文习题均出自攻防世界的MISC新手区，链接如下：&lt;br&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
     <title>攻防世界MISC新手区</title>
     <link href="https://00yongshiwangzi.github.io/posts/63376df9.html"/>
     <id>https://00yongshiwangzi.github.io/posts/63376df9.html</id>
     <published>2020-09-27T11:49:32.656Z</published>
-    <updated>2020-09-27T12:36:14.357Z</updated>
+    <updated>2020-09-27T12:36:28.565Z</updated>
     
     
       
@@ -38,33 +82,11 @@
   </entry>
   
   <entry>
-    <title></title>
-    <link href="https://00yongshiwangzi.github.io/posts/0.html"/>
-    <id>https://00yongshiwangzi.github.io/posts/0.html</id>
-    <published>2020-09-26T07:41:10.649Z</published>
-    <updated>2020-09-27T12:36:14.346Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt; 前言：刚在数据库课上学了数据库操作语言，对于英语不好的我来说又要记不少单词，趁着这次作业，把刚学的一些语法记一下&lt;br&gt; 注：&lt;br&gt; 1.文中路径和文件名请自行替换&lt;br&gt; 2.报错大多是因为一些细微之差，比如冒号引号的缺失，请多多注意&lt;/p&gt;
-&lt;h1</summary>
-        
-      
-    
-    
-    
-    
-  </entry>
-  
-  <entry>
     <title>Hello World</title>
     <link href="https://00yongshiwangzi.github.io/posts/4a17b156.html"/>
     <id>https://00yongshiwangzi.github.io/posts/4a17b156.html</id>
     <published>2020-09-22T03:52:39.706Z</published>
-    <updated>2020-09-27T12:36:14.351Z</updated>
+    <updated>2020-09-27T12:36:28.563Z</updated>
     
     
       
