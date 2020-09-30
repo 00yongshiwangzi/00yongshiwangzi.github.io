@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="XSS学习笔记, 00yongshiwangzi">
+    <meta name="keywords" content="攻防世界web新手练习区, 00yongshiwangzi">
     <meta name="description" content="努力的话，天才也可以超越！">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>XSS学习笔记 | Cy_Dragon Blog</title>
+    <title>攻防世界web新手练习区 | Cy_Dragon Blog</title>
     <link rel="icon" type="image/jpeg" href="/logo.jpg">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -309,12 +309,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/00yongshiwangzi/00yongshiwangzi.github.io/medias/featureimages/2.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/00yongshiwangzi/00yongshiwangzi.github.io/medias/featureimages/20.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">XSS学习笔记</h1>
+                    <h1 class="description center-align post-title">攻防世界web新手练习区</h1>
                 </div>
             </div>
         </div>
@@ -443,7 +443,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-09-30
+                    2020-09-28
                 </div>
                 
 
@@ -457,14 +457,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.1k
+                    1k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    4 分
+                    3 分
                 </div>
                 
 
@@ -479,13 +479,34 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="XSS-跨站脚本攻击"><a href="#XSS-跨站脚本攻击" class="headerlink" title="XSS : 跨站脚本攻击"></a>XSS : 跨站脚本攻击</h1><p><strong>将恶意的js代码进行注入<br>注入点的两个要求：<br>1.输入的东西可以在页面上显示.<br>2.一个可以自行控制的参数位置<br>GET,POST,COOKIE 如用户名输入框，留言板等</strong></p>
-<h2 id="1-反射型XSS："><a href="#1-反射型XSS：" class="headerlink" title="1.反射型XSS："></a>1.反射型XSS：</h2><p><strong>即输即用，插入一次而没有进入服务器的存储结构中<br>?wd后为传输搜索选项的内容，可以进行插入恶意代码<br>这样的payload较长，可能带有敏感字符如&lt; script&gt;标签等，<br>容易失败，所以可以利用网上一些缩短url工具进行欺骗</strong></p>
-<h2 id="2-存储型XSS："><a href="#2-存储型XSS：" class="headerlink" title="2.存储型XSS："></a>2.存储型XSS：</h2><p><strong>一劳永逸 向网页插入的代码会被网站添加到服务器的存储结构中<br>持久性的跨站脚本，更具威胁性<br>一般用来网站渗透、挂马、蠕虫病毒、钓鱼流量导流等<br>只要在HTML中加入&lt; script&gt;标签即可让浏览器执行我们需要的js脚本<br>  Javascript脚本语言：一种直译式脚本语言<br>广泛用于客户端   用来给HTML网页增加动态功能<br>很容易被客户端修改，可以控制浏览器做各种动作例如弹窗、重定向、刷新等</strong></p>
-<h1 id="XSS检测："><a href="#XSS检测：" class="headerlink" title="XSS检测："></a>XSS检测：</h1><p><strong>XSS攻击通常需要获取网站用户的登录信息，如登录账号密码或者登录凭证<br>通常渗透测试中我们将测试代码浓缩为：<br>&lt; script&gt;alert(1)&lt; /script&gt;构造网页弹窗<br>这个payload中包含了几乎所有XSS利用的前提条件<br>–可以插入&lt; script&gt;标签、包含js代码的函数alert,<br>如果浏览器弹窗，说明可能存在XSS注入</strong></p>
-<h1 id="XSS构造"><a href="#XSS构造" class="headerlink" title="XSS构造"></a>XSS构造</h1><p><strong>利用XSS漏洞，攻击者可以进行两种攻击：钓鱼和盗取Cookie<br>钓鱼步骤：<br>1.根据原始网页构造一个克隆页面<br>2.通过XSS将克隆页面导入网站后台<br>3.用户被骗后输入信息，如用户名密码<br>4.收集到信息后，我们将用户的用户名密码导入到钓鱼接受平台中<br>盗取Cookie利用原理和钓鱼相同，我们接受到用户cookie后就能够伪造身份登录后台了<br>留言板框的标签为&lt; textarea&gt;，为了屏蔽这个标签，我们使前后&lt; textarea&gt;闭合<br>如在留言板里输入&lt; /textarea&gt;&lt; script ……&gt;&lt; /script&gt;&lt; textarea&gt;</strong></p>
-<h1 id="XSS防御"><a href="#XSS防御" class="headerlink" title="XSS防御"></a>XSS防御</h1><p><strong>HttpOnly属性：让我们的cookie只能被http控制而不能被js控制<br>XSS绕过<br>第一种思路：不同的标签<br>主要思想为<br>           1.这个标签可以写入连接导致跳转或者包含其他页面，如&lt; img&gt;<br>            2.这个标签中可以添加事件而执行js，例如&lt; input&gt;<br>&lt; img src=”javascript:alert(‘xss’)”&gt;可以使用js的伪协议去执行xss代码，<br>当然也可以在img中导入一个外网带有xss代码链接，但是也不是所有的web浏览器都支持伪协议<br>第二种思路：产生自己的事件<br>js本来就是一种动态脚本语言<br>如果我们的输入在input标签中，后者能够自己写入一个input标签，<br>就可以构建自己的事件如onclick(点击鼠标)，onmouseover(鼠标移动)，onkeydown(敲击键盘)等响应事件<br>可以利用的事件一般分为3类：<br>1.用户接口IO（鼠标，键盘）<br>2.逻辑（处理的结果）<br>3.变化（对文档的修改）</strong></p>
-<h2 id="编码绕过、常用编码："><a href="#编码绕过、常用编码：" class="headerlink" title="编码绕过、常用编码："></a>编码绕过、常用编码：</h2><p><strong>URL编码：通过%和ascii码编码但是要确认服务器会对我们的输入解码，否则起到反作用<br>HTML实体编码：命名实体：以&amp;开头，分号结尾的，例如“&lt;”编码为“&amp;lt”<br>字符编码：十进制、十六进制ASCII码或unicode字符编码，样式为“&amp;#数值”，<br>                例如“&lt;”可以编码为“&lt;”和“&lt;”<br>js编码:四种编码形式，例如“e”为”\145”或”\x65”或”\u0065”<br>css编码：用一个反斜线()后面跟1~6位的十六进制数字，例如e可以编码为“\65”或”65”或”00065”<br>理解XSS编码顺序：在什么位置应该被谁理解</strong></p>
+                <p>写在前面：本人CTF小白，在web方面的水平更是不高，因此如果文中有不足之处，还请指出。写本文主要有两个目的：一是防止自己将做过的题目知识点遗忘，二是希望可以在一定程度上帮助到像我一样的小白。</p>
+<p>本文习题均出自攻防世界的MISC新手区，链接如下：<br><a target="_blank" rel="noopener" href="https://adworld.xctf.org.cn/">攻防世界</a></p>
+<h1 id="1-view-source"><a href="#1-view-source" class="headerlink" title="1.view_source"></a>1.view_source</h1><p>题目中说右键不好用了，意思是说无法通过点击鼠标右键进行查看网页源代码了。我们可以采取另外一种方式进行查看：F12键。<br>flag就藏在网页源码中：<br><img src="https://img-blog.csdnimg.cn/20200403193841183.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1ODEzOTgw,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<blockquote>
+<p>cyberpeace{782d7f32db8d52c32523074c085ed65a}</p>
+</blockquote>
+<h1 id="2-robots"><a href="#2-robots" class="headerlink" title="2.robots"></a>2.robots</h1><p>题目中提示为“Robots协议”，如果不了解的，可以上网查一下，以下是百度百科中的解释：<br><img src="https://img-blog.csdnimg.cn/2020040319422837.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1ODEzOTgw,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">于是在所给网址<a href="http://111.198.29.45:58686后面加上/robots.txt,访问页面，得到一串字符：">http://111.198.29.45:58686后面加上/robots.txt,访问页面，得到一串字符：</a><br><img src="https://img-blog.csdnimg.cn/2020040319485961.png" alt="在这里插入图片描述">但是尝试过后，这还不是最后的答案，这是一个php文件，因此我们在原网站<a href="http://111.198.29.45:58686后加上f1ag_1s_h3re.php,进行访问,就能得到最终的flag">http://111.198.29.45:58686后加上f1ag_1s_h3re.php,进行访问,就能得到最终的flag</a>:</p>
+<blockquote>
+<p>cyberpeace{a60efe32de5beccdeadbeca3be9b29ed}</p>
+</blockquote>
+<h1 id="3-backup"><a href="#3-backup" class="headerlink" title="3.backup"></a>3.backup</h1><p>首先打开网址，发现一句话“你知道index.php的备份文件名吗？”首先判断这是一个php文件，于是在网址后加上index.php进行访问，发现页面并没有发生变化。于是重新思考这句话，考虑到文件还有扩展名，常见的备份文件后缀名有.git.svn.swp.~.bak.bash_history,逐一尝试后发现加上备份文件的扩展名.bak可以，即我们最终访问的网址为<a target="_blank" rel="noopener" href="http://111.198.29.45:35364/index.php.bak%EF%BC%8C%E8%AE%BF%E9%97%AE%E5%90%8E%E4%BC%9A%E8%AE%A9%E4%BD%A0%E4%B8%8B%E8%BD%BD%E4%B8%80%E4%B8%AA%E6%96%87%E4%BB%B6%EF%BC%8C%E5%9C%A8%E4%B8%8B%E8%BD%BD%E7%9A%84%E6%96%87%E4%BB%B6%E4%B8%AD%E6%89%BE%E5%88%B0flag">http://111.198.29.45:35364/index.php.bak，访问后会让你下载一个文件，在下载的文件中找到flag</a>:<br><img src="https://img-blog.csdnimg.cn/20200403200330127.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1ODEzOTgw,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<blockquote>
+<p>Cyberpeace{855A1C4B3401294CB6604CCC98BDE334}</p>
+</blockquote>
+<h1 id="4-cookie"><a href="#4-cookie" class="headerlink" title="4.cookie"></a>4.cookie</h1><p>打开网址，看见一句话“你知道什么是cookie吗？”，我还真的不知道，于是上网去查：cookie （储存在用户本地终端上的数据）,虽然不是很懂，但有了前几个题的经验，我们还把它当做php文件试一下，在网址后加上cookie.php,访问后得到了一句新的话“See the http response”（查看http响应 ）,于是按F12，在控制台中查看htttp响应，成功找到flag:<br><img src="https://img-blog.csdnimg.cn/20200403201831725.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1ODEzOTgw,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<blockquote>
+<p>cyberpeace{fbd81c539270701d8c97107a12dda413}</p>
+</blockquote>
+<h1 id="5-disabled-button"><a href="#5-disabled-button" class="headerlink" title="5.disabled_button"></a>5.disabled_button</h1><p>网页打开后有一个写着“flag”的按钮，根据题意，只要可以点击这个按钮，就能得到flag，于是查看源代码，进行代码审计，查看这个按钮不能点的原因.<img src="https://img-blog.csdnimg.cn/20200403202507910.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1ODEzOTgw,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>发现网页代码中的disabled=””，判断是这一代码导致按钮失灵，于是将其删去，发现网页中的按钮可以点击，点击按钮，得到flag:<br><img src="https://img-blog.csdnimg.cn/20200403202630485.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1ODEzOTgw,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<blockquote>
+<p>cyberpeace{c890c3014aa2feb593addda1c9d92e63}</p>
+</blockquote>
+<h1 id="6-weak-auth"><a href="#6-weak-auth" class="headerlink" title="6.weak_auth"></a>6.weak_auth</h1><p>打开网页，需要输入用户名和密码。<br><img src="https://img-blog.csdnimg.cn/20200403203405661.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1ODEzOTgw,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>根据题目中“随手设的密码”可以判断是弱密码，即比较简单的密码，可以通过暴力破解的手段进行获取。首先随便输入一个用户名和密码，访问得到：<br><img src="https://img-blog.csdnimg.cn/20200403203916838.png" alt="在这里插入图片描述"></p>
+<p>因此得知用户名为admin,只需要爆破得到密码即可。<br>具体爆破流程，由于本人经验爆破不足，请参考大佬的文章：<br><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_33973609/article/details/93629053">渗透测试_利用Burp爆破用户名与密码</a><br>这篇文章中对使用Burp Suite爆破进行了详细的讲解，让我受益很多。<br>附上Burp Suite免费版下载地址：<a target="_blank" rel="noopener" href="https://portswigger.net/burp/communitydownload">下载地址</a><br>爆破的总体思想就是让系统一个一个地去进行尝试，最后得到答案，因此只能当答案形式比较简单的时候才比较有效。<br><img src="https://img-blog.csdnimg.cn/20200403204845594.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1ODEzOTgw,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">最后试出密码为123456，然后在原网页输入用户名admin和密码123456，访问得到falg:</p>
+<blockquote>
+<p>cyberpeace{fd7119a8473439c6a099cbef4cf22cde}</p>
+</blockquote>
+<p>最后，期待和大家共同进步！</p>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -529,7 +550,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://00yongshiwangzi.github.io/posts/3459.html">https://00yongshiwangzi.github.io/posts/3459.html</a>
+                    <a href="https://00yongshiwangzi.github.io/posts/7834/">https://00yongshiwangzi.github.io/posts/7834/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -735,7 +756,7 @@
         repo: 'gitalk',
         owner: '00yongshiwangzi',
         admin: "00yongshiwangzi",
-        id: '2020-09-30T18-42-57',
+        id: '2020-09-28T20-34-27',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -759,18 +780,17 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/posts/3459.html">
+                <a href="/posts/4981/">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/00yongshiwangzi/00yongshiwangzi.github.io/medias/featureimages/2.jpg" class="responsive-img" alt="XSS学习笔记">
+                        <img src="https://cdn.jsdelivr.net/gh/00yongshiwangzi/00yongshiwangzi.github.io/medias/featureimages/21.jpg" class="responsive-img" alt="数据库操纵语言笔记">
                         
-                        <span class="card-title">XSS学习笔记</span>
+                        <span class="card-title">数据库操纵语言笔记</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -780,9 +800,9 @@
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-09-30
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-09-28
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -791,7 +811,6 @@
                         </span>
                     </div>
                 </div>
-
                 
             </div>
         </div>
@@ -802,13 +821,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/0.html">
+                <a href="/posts/4a17b156/">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/00yongshiwangzi/00yongshiwangzi.github.io/medias/featureimages/0.jpg" class="responsive-img" alt="">
+                        <img src="https://cdn.jsdelivr.net/gh/00yongshiwangzi/00yongshiwangzi.github.io/medias/featureimages/13.jpg" class="responsive-img" alt="Hello World">
                         
-                        <span class="card-title"></span>
+                        <span class="card-title">Hello World</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -819,7 +838,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-09-30
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-09-22
                             </span>
                         <span class="publish-author">
                             

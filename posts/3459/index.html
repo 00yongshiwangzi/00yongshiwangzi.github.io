@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="战队第二次考核wp, 00yongshiwangzi">
+    <meta name="keywords" content="XSS学习笔记, 00yongshiwangzi">
     <meta name="description" content="努力的话，天才也可以超越！">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>战队第二次考核wp | Cy_Dragon Blog</title>
+    <title>XSS学习笔记 | Cy_Dragon Blog</title>
     <link rel="icon" type="image/jpeg" href="/logo.jpg">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -309,12 +309,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/00yongshiwangzi/00yongshiwangzi.github.io/medias/featureimages/17.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/00yongshiwangzi/00yongshiwangzi.github.io/medias/featureimages/2.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">战队第二次考核wp</h1>
+                    <h1 class="description center-align post-title">XSS学习笔记</h1>
                 </div>
             </div>
         </div>
@@ -457,14 +457,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.6k
+                    1.1k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    6 分
+                    4 分
                 </div>
                 
 
@@ -479,152 +479,13 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>本帖为记录长右网络空间安全战队第二次考核题内容，希望可以记住自己做过的题，让自己更好地进步。</p>
-<h1 id="Sign"><a href="#Sign" class="headerlink" title="Sign"></a>Sign</h1><p>签到题，直接提交flag即可。<br><img src="https://img-blog.csdnimg.cn/20200407093045750.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1ODEzOTgw,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
-<h1 id="Misc"><a href="#Misc" class="headerlink" title="Misc"></a>Misc</h1><h2 id="1-小熊猫变成小兔叽"><a href="#1-小熊猫变成小兔叽" class="headerlink" title="1.小熊猫变成小兔叽"></a>1.小熊猫变成小兔叽</h2><p><img src="https://img-blog.csdnimg.cn/20200407093651474.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1ODEzOTgw,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>附件为一个名为zip的文件，没有后缀，在文件名后加上.zip（压缩文件的后缀名），文件变为压缩文件。打开压缩文件，发现一张图。<br><img src="https://img-blog.csdnimg.cn/20200407094149676.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1ODEzOTgw,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>根据题目中“小熊猫拉长一下”，猜测需要改变图片的高度或者宽度。鼠标右键查看图片属性：<br><img src="https://img-blog.csdnimg.cn/20200407094437394.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1ODEzOTgw,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>发现图片高度比较低，于是考虑增加图片的高度。这里用到的工具为WinHex。<br>具体操作方法请参考<a target="_blank" rel="noopener" href="https://blog.csdn.net/CliffordR/article/details/81123232?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522158605320819725219953422%2522%252C%2522scm%2522%253A%252220140713.130056874..%2522%257D&amp;request_id=158605320819725219953422&amp;biz_id=0&amp;utm_source=distribute.pc_search_result.none-task-blog-blog_SOOPENSEARCH-2">CTF 图片隐写之修改图片高宽</a><br>简单来说该图片的高度为380像素，于是将380转换成十六进制，为017c,然后在WinHex找到017c，将其改为我们想要改正的数值的十六进制形式。<br>我在具体操作中将改图片的高度改为420像素（十六进制形式为01a4），成功得到图片下方的字符串：<br><img src="https://img-blog.csdnimg.cn/20200407095908462.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1ODEzOTgw,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>字符串为：olee{qlr3y_16q51_y3q1l_rc654_yap45}<br>参考题目中给出的flag形式，发现这串字符形式已经和flag的形式一样了。提示给出“低头看看键盘”，于是去搜和键盘相关的解码，发现键盘密码(键盘上的字母顺序分别对应字母表里的字母顺序，如QWE对应ABC)，OLEE正好对应了ISCC,于是使用键盘密码的方式，得到最后的flag.</p>
-<blockquote>
-<p>iscc{asd3f_16a51_f3a1s_dv654_fkj45}</p>
-</blockquote>
-<h2 id="2-Broken-WUHAN"><a href="#2-Broken-WUHAN" class="headerlink" title="2.Broken WUHAN"></a>2.Broken WUHAN</h2><p><img src="https://img-blog.csdnimg.cn/2020040710434112.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1ODEzOTgw,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>下载附件，为一个不可读的图片。使用WinHex打开图片，<br><img src="https://img-blog.csdnimg.cn/20200407105209321.png" alt="在这里插入图片描述"><br>发现图片的文件头标志不对(.jpg文件的头标志应该为FFD8FF)，于是修改头标志，<br><img src="https://img-blog.csdnimg.cn/20200407110509484.png" alt="在这里插入图片描述"><br>保存，成功打开图片，得到flag.<br><img src="https://img-blog.csdnimg.cn/20200407110717302.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1ODEzOTgw,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>有关文件的头标志，请参考：<a target="_blank" rel="noopener" href="https://blog.csdn.net/holandstone/article/details/7624343">各类文件的文件头标志</a></p>
-<blockquote>
-<p>flag{wu_Han_jia_Y0u!}</p>
-</blockquote>
-<h2 id="3-QRQRQRQRQRQRQRQRQRQRQRQRQR"><a href="#3-QRQRQRQRQRQRQRQRQRQRQRQRQR" class="headerlink" title="3. QRQRQRQRQRQRQRQRQRQRQRQRQR"></a>3. QRQRQRQRQRQRQRQRQRQRQRQRQR</h2><p><img src="https://img-blog.csdnimg.cn/20200407110930582.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1ODEzOTgw,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>下载附件，是一张二维码的动态图<br><img src="https://img-blog.csdnimg.cn/20200407111133130.gif" alt="在这里插入图片描述"><br>既然是动态图，那么肯定要逐一查看每一帧，找出最特殊的一帧。可以使用ps打开动态图，进行逐一查看，但是有100帧，这样有些费事。我这里使用一个软件Namo GIF编辑器，比较方便：<br><img src="https://img-blog.csdnimg.cn/20200407111915475.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1ODEzOTgw,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>于是取出第62帧，<br><img src="https://img-blog.csdnimg.cn/20200407112418932.png" alt="在这里插入图片描述"><br>第62帧与其他二维码最大的不同之处就是多了右下角的小方框。对比一般二维码，这张二维码少了三个定位符，于是用ps给这图加上定位符<br><img src="https://img-blog.csdnimg.cn/20200407112443253.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1ODEzOTgw,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>用微信或者支付宝扫一扫，得到flag.(扫不出来请多扫扫，图片还原度不高会导致识别率较低)<br><img src="https://img-blog.csdnimg.cn/20200407112800922.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1ODEzOTgw,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
-<blockquote>
-<p>flag{GYSEC_GOGOGO}</p>
-</blockquote>
-<h2 id="4-来玩拼图呀"><a href="#4-来玩拼图呀" class="headerlink" title="4.来玩拼图呀"></a>4.来玩拼图呀</h2><p><img src="https://img-blog.csdnimg.cn/20200407200219412.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1ODEzOTgw,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>附送的音乐为：Time,挺好听的。一开始是真的没想到这首歌的意思。附件就是二百多张拼图，而且顺序是乱的，真要拼出来花儿都谢了。其实Time的真正意思是让图片按照时间排序，就可以得到按顺序的图片了，再用ps进行拼图，就很容易了。<br><img src="https://img-blog.csdnimg.cn/20200407200821115.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1ODEzOTgw,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
-<blockquote>
-<p>flag{fate_stay_nt}</p>
-</blockquote>
-<h1 id="Web"><a href="#Web" class="headerlink" title="Web"></a>Web</h1><h2 id="1-var-dump"><a href="#1-var-dump" class="headerlink" title="1.var_dump("></a>1.var_dump(</h2><p><img src="https://img-blog.csdnimg.cn/20200407201829517.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1ODEzOTgw,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>打开网页，是一些代码：<br><img src="https://img-blog.csdnimg.cn/20200407201906579.png" alt="在这里插入图片描述"></p>
-<p>虽然不是很懂，于是直接去查题目，得到：var_dump() 函数用于输出变量的相关信息。然后再去查$_REQUEST: 可以获取以POST方法和GET方法提交的数据，在参考众多网站之后，得到在网址后加上index.php?hello=1);print_r(file(“./flag.php”)，访问网址，即可得到flag.<br><img src="https://img-blog.csdnimg.cn/20200407204339657.png" alt="在这里插入图片描述"><br><a target="_blank" rel="noopener" href="https://segmentfault.com/a/1190000016750234">参考文章</a></p>
-<blockquote>
-<p>flag{your_php_is_very_good_my_bro}</p>
-</blockquote>
-<h2 id="2-Easy-Challenge"><a href="#2-Easy-Challenge" class="headerlink" title="2.Easy_Challenge"></a>2.Easy_Challenge</h2><p><img src="https://img-blog.csdnimg.cn/20200407213149622.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1ODEzOTgw,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>都说了是一道老题了，那就直接上链接吧：<a target="_blank" rel="noopener" href="https://blog.csdn.net/qin9800/article/details/105299457/">我是原题</a></p>
-<h1 id="Reverse"><a href="#Reverse" class="headerlink" title="Reverse"></a>Reverse</h1><h2 id="1-Simple-py"><a href="#1-Simple-py" class="headerlink" title="1.Simple_py"></a>1.Simple_py</h2><p><img src="https://img-blog.csdnimg.cn/2020040809093315.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1ODEzOTgw,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>这是一道python逆向题，附件为一个.pyc文件，因此需要找到将.pyc文件还原为.py文件的方法。具体方法参考链接：<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_37245397/article/details/103260014">python反编译exe</a><br>这篇文章介绍的是把.exe文件先变成.pyc文件再还原成.py文件的方法，在这个题中我们只需要执行.pyc还原.py就够了。</p>
-<pre><code>// 这是还原后的.py代码：</code></pre>
-<pre class=" language-javascript"><code class="language-javascript"><span class="token comment" spellcheck="true">// import base64</span>
-
-def <span class="token function">encode</span><span class="token punctuation">(</span>mess<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    s <span class="token operator">=</span> <span class="token string">''</span>
-    <span class="token keyword">for</span> i <span class="token keyword">in</span> mess<span class="token punctuation">:</span>
-        x <span class="token operator">=</span> <span class="token function">ord</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token number">16</span>
-        x <span class="token operator">=</span> x <span class="token operator">^</span> <span class="token number">32</span>
-        s <span class="token operator">+</span><span class="token operator">=</span> <span class="token function">chr</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span>
-
-    <span class="token keyword">return</span> base64<span class="token punctuation">.</span><span class="token function">b64encode</span><span class="token punctuation">(</span><span class="token function">bytes</span><span class="token punctuation">(</span>s<span class="token punctuation">,</span> encoding<span class="token operator">=</span><span class="token string">'utf-8'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-
-
-correct <span class="token operator">=</span> b<span class="token string">'VlxRV8KreGFCYU9ZwqNPwqDCqVNPQlVPdmFRV8Kt'</span>
-flag <span class="token operator">=</span> <span class="token function">input</span><span class="token punctuation">(</span><span class="token string">'input flag:'</span><span class="token punctuation">)</span>
-<span class="token keyword">if</span> <span class="token function">encode</span><span class="token punctuation">(</span>flag<span class="token punctuation">)</span> <span class="token operator">==</span> correct<span class="token punctuation">:</span>
-    <span class="token function">print</span><span class="token punctuation">(</span><span class="token string">'you are correct'</span><span class="token punctuation">)</span>
-<span class="token keyword">else</span><span class="token punctuation">:</span>
-    <span class="token function">print</span><span class="token punctuation">(</span><span class="token string">'you are wrong'</span><span class="token punctuation">)</span>
-</code></pre>
-<p>其中，核心代码只有中间一部分：</p>
-<pre><code>// 核心代码</code></pre>
-<pre class=" language-javascript"><code class="language-javascript"><span class="token comment" spellcheck="true">//     for i in mess:</span>
-        x <span class="token operator">=</span> <span class="token function">ord</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token number">16</span>
-        x <span class="token operator">=</span> x <span class="token operator">^</span> <span class="token number">32</span>
-        s <span class="token operator">+</span><span class="token operator">=</span> <span class="token function">chr</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span></code></pre>
-<p>想要得到flag,我们就要将程序反过来写，通过反向运行程序，获得原来的flag，因此，改变核心代码，得到：</p>
-<pre><code>// 修改后的代码</code></pre>
-<pre class=" language-javascript"><code class="language-javascript"><span class="token comment" spellcheck="true">// import base64</span>
-mess<span class="token operator">=</span><span class="token string">'VlxRV8KreGFCYU9ZwqNPwqDCqVNPQlVPdmFRV8Kt'</span>
-s <span class="token operator">=</span> <span class="token string">''</span>
-mess <span class="token operator">=</span> base64<span class="token punctuation">.</span><span class="token function">b64decode</span><span class="token punctuation">(</span>mess<span class="token punctuation">)</span>
-<span class="token keyword">for</span> i <span class="token keyword">in</span> mess<span class="token punctuation">:</span>
-    x <span class="token operator">=</span> i <span class="token operator">^</span> <span class="token number">32</span>
-    x <span class="token operator">=</span> x <span class="token operator">-</span> <span class="token number">16</span>
-    s <span class="token operator">+</span><span class="token operator">=</span> <span class="token function">chr</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span>
-<span class="token function">print</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span></code></pre>
-<p>运行后得到：</p>
-<blockquote>
-<p>flagÒ{H1R1_iÒs_ÒpÒyc_Re_F1agÒ}</p>
-</blockquote>
-<p>将其中明显不是密码的Ò去掉，得到最后的flag:</p>
-<blockquote>
-<p>flag{H1R1_is_pyc_Re_F1ag}</p>
-</blockquote>
-<h2 id="2-Easy-Reverse"><a href="#2-Easy-Reverse" class="headerlink" title="2.Easy Reverse"></a>2.Easy Reverse</h2><p><img src="https://img-blog.csdnimg.cn/20200408093250543.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1ODEzOTgw,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>下载附件，是一个.exe文件，因为不是python文件，因此我们不能用上一题一样的方法去还原其代码了。于是考虑其他的反编译器，这里使用IDA进行反编译，得到C伪代码</p>
-<pre><code>// 伪C代码</code></pre>
-<pre class=" language-javascript"><code class="language-javascript"><span class="token comment" spellcheck="true">// #include &lt;stdio.h></span>
-<span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    int a<span class="token punctuation">;</span>
-    char v4<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// [esp+16h] [ebp-1Ah]</span>
-    char v5<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// [esp+17h] [ebp-19h]</span>
-    char v6<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// [esp+18h] [ebp-18h]</span>
-    char v7<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// [esp+19h] [ebp-17h]</span>
-    char v8<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// [esp+1Ah] [ebp-16h]</span>
-    char v9<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// [esp+1Bh] [ebp-15h]</span>
-    char v10<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// [esp+1Ch] [ebp-14h]</span>
-    char v11<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// [esp+1Dh] [ebp-13h]</span>
-    char v12<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// [esp+1Eh] [ebp-12h]</span>
-    char v13<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// [esp+1Fh] [ebp-11h]</span>
-    char v14<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// [esp+20h] [ebp-10h]</span>
-    char v15<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// [esp+21h] [ebp-Fh]</span>
-    char v16<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// [esp+22h] [ebp-Eh]</span>
-    char v17<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// [esp+23h] [ebp-Dh]</span>
-    char v18<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// [esp+24h] [ebp-Ch]</span>
-    char v19<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// [esp+25h] [ebp-Bh]</span>
-    char v20<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// [esp+26h] [ebp-Ah]</span>
-    char v21<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// [esp+27h] [ebp-9h]</span>
-    int v22<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// [esp+28h] [ebp-8h]</span>
-    int i<span class="token punctuation">;</span> 
-    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"请输入数字:"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>v22<span class="token punctuation">)</span><span class="token punctuation">)</span>
-    <span class="token punctuation">{</span>
-        v4 <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">125</span><span class="token punctuation">;</span>
-        v5 <span class="token operator">=</span> <span class="token number">124</span><span class="token punctuation">;</span>
-        v6 <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">122</span><span class="token punctuation">;</span>
-        v7 <span class="token operator">=</span> <span class="token number">127</span><span class="token punctuation">;</span>
-        v8 <span class="token operator">=</span> <span class="token number">106</span><span class="token punctuation">;</span>
-        v9 <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">113</span><span class="token punctuation">;</span>
-        v10 <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">109</span><span class="token punctuation">;</span>
-        v11 <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">118</span><span class="token punctuation">;</span>
-        v12 <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">126</span><span class="token punctuation">;</span>
-        v13 <span class="token operator">=</span> <span class="token number">119</span><span class="token punctuation">;</span>
-        v14 <span class="token operator">=</span> <span class="token number">108</span><span class="token punctuation">;</span>
-        v15 <span class="token operator">=</span> <span class="token number">127</span><span class="token punctuation">;</span>
-        v16 <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">122</span><span class="token punctuation">;</span>
-        v17 <span class="token operator">=</span> <span class="token number">116</span><span class="token punctuation">;</span>
-        v18 <span class="token operator">=</span> <span class="token number">122</span><span class="token punctuation">;</span>
-        v19 <span class="token operator">=</span> <span class="token number">102</span><span class="token punctuation">;</span>
-        v20 <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">102</span><span class="token punctuation">;</span>
-        v21 <span class="token operator">=</span> <span class="token number">91</span><span class="token punctuation">;</span>
-
-        <span class="token keyword">for</span> <span class="token punctuation">(</span>i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;=</span> <span class="token number">17</span><span class="token punctuation">;</span> <span class="token operator">++</span>i<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            <span class="token function">putchar</span><span class="token punctuation">(</span>v22 <span class="token operator">-</span> <span class="token operator">*</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>v4 <span class="token operator">+</span> i<span class="token punctuation">)</span> <span class="token operator">-</span> i<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-        <span class="token function">putchar</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token function">putchar</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"请输入数字:"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-</code></pre>
-<p>flag 第一个字母位“f” asII 码为0x66 ,十进制 102.也就是<br>x-(-125)=102,x=-23<br>于是编写代码：<br>下面展示一些 <code>内联代码片</code>。</p>
-<pre><code>//编写出生成flag的代码</code></pre>
-<pre class=" language-javascript"><code class="language-javascript"><span class="token comment" spellcheck="true">// #include &lt;stdio.h></span>
-
-<span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token punctuation">{</span>       
-        int i<span class="token punctuation">;</span>
-        int s<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token punctuation">{</span><span class="token operator">-</span><span class="token number">125</span><span class="token punctuation">,</span><span class="token number">124</span><span class="token punctuation">,</span><span class="token operator">-</span><span class="token number">122</span><span class="token punctuation">,</span><span class="token number">127</span><span class="token punctuation">,</span><span class="token number">106</span><span class="token punctuation">,</span><span class="token operator">-</span><span class="token number">113</span><span class="token punctuation">,</span><span class="token operator">-</span><span class="token number">109</span><span class="token punctuation">,</span><span class="token operator">-</span><span class="token number">118</span><span class="token punctuation">,</span><span class="token operator">-</span><span class="token number">126</span><span class="token punctuation">,</span><span class="token number">119</span><span class="token punctuation">,</span><span class="token number">108</span><span class="token punctuation">,</span><span class="token number">127</span><span class="token punctuation">,</span><span class="token operator">-</span><span class="token number">122</span><span class="token punctuation">,</span><span class="token number">116</span><span class="token punctuation">,</span><span class="token number">122</span><span class="token punctuation">,</span><span class="token number">102</span><span class="token punctuation">,</span><span class="token operator">-</span><span class="token number">102</span><span class="token punctuation">,</span><span class="token number">91</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
-        <span class="token keyword">for</span><span class="token punctuation">(</span>i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;=</span><span class="token number">17</span><span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span>
-        <span class="token punctuation">{</span>
-                <span class="token function">putchar</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">23</span><span class="token operator">-</span> <span class="token punctuation">(</span>s【i】<span class="token punctuation">)</span><span class="token operator">-</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-        <span class="token punctuation">}</span>
-        <span class="token function">putchar</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span></code></pre>
-<p>运行，生成flag:</p>
-<blockquote>
-<p>flag{UPX_is_What?}</p>
-</blockquote>
-<p>参考网站：<a target="_blank" rel="noopener" href="https://www.52pojie.cn/thread-655233-1-1.html">一个简单的ctf逆向</a></p>
+                <h1 id="XSS-跨站脚本攻击"><a href="#XSS-跨站脚本攻击" class="headerlink" title="XSS : 跨站脚本攻击"></a>XSS : 跨站脚本攻击</h1><p><strong>将恶意的js代码进行注入<br>注入点的两个要求：<br>1.输入的东西可以在页面上显示.<br>2.一个可以自行控制的参数位置<br>GET,POST,COOKIE 如用户名输入框，留言板等</strong></p>
+<h2 id="1-反射型XSS："><a href="#1-反射型XSS：" class="headerlink" title="1.反射型XSS："></a>1.反射型XSS：</h2><p><strong>即输即用，插入一次而没有进入服务器的存储结构中<br>?wd后为传输搜索选项的内容，可以进行插入恶意代码<br>这样的payload较长，可能带有敏感字符如&lt; script&gt;标签等，<br>容易失败，所以可以利用网上一些缩短url工具进行欺骗</strong></p>
+<h2 id="2-存储型XSS："><a href="#2-存储型XSS：" class="headerlink" title="2.存储型XSS："></a>2.存储型XSS：</h2><p><strong>一劳永逸 向网页插入的代码会被网站添加到服务器的存储结构中<br>持久性的跨站脚本，更具威胁性<br>一般用来网站渗透、挂马、蠕虫病毒、钓鱼流量导流等<br>只要在HTML中加入&lt; script&gt;标签即可让浏览器执行我们需要的js脚本<br>  Javascript脚本语言：一种直译式脚本语言<br>广泛用于客户端   用来给HTML网页增加动态功能<br>很容易被客户端修改，可以控制浏览器做各种动作例如弹窗、重定向、刷新等</strong></p>
+<h1 id="XSS检测："><a href="#XSS检测：" class="headerlink" title="XSS检测："></a>XSS检测：</h1><p><strong>XSS攻击通常需要获取网站用户的登录信息，如登录账号密码或者登录凭证<br>通常渗透测试中我们将测试代码浓缩为：<br>&lt; script&gt;alert(1)&lt; /script&gt;构造网页弹窗<br>这个payload中包含了几乎所有XSS利用的前提条件<br>–可以插入&lt; script&gt;标签、包含js代码的函数alert,<br>如果浏览器弹窗，说明可能存在XSS注入</strong></p>
+<h1 id="XSS构造"><a href="#XSS构造" class="headerlink" title="XSS构造"></a>XSS构造</h1><p><strong>利用XSS漏洞，攻击者可以进行两种攻击：钓鱼和盗取Cookie<br>钓鱼步骤：<br>1.根据原始网页构造一个克隆页面<br>2.通过XSS将克隆页面导入网站后台<br>3.用户被骗后输入信息，如用户名密码<br>4.收集到信息后，我们将用户的用户名密码导入到钓鱼接受平台中<br>盗取Cookie利用原理和钓鱼相同，我们接受到用户cookie后就能够伪造身份登录后台了<br>留言板框的标签为&lt; textarea&gt;，为了屏蔽这个标签，我们使前后&lt; textarea&gt;闭合<br>如在留言板里输入&lt; /textarea&gt;&lt; script ……&gt;&lt; /script&gt;&lt; textarea&gt;</strong></p>
+<h1 id="XSS防御"><a href="#XSS防御" class="headerlink" title="XSS防御"></a>XSS防御</h1><p><strong>HttpOnly属性：让我们的cookie只能被http控制而不能被js控制<br>XSS绕过<br>第一种思路：不同的标签<br>主要思想为<br>           1.这个标签可以写入连接导致跳转或者包含其他页面，如&lt; img&gt;<br>            2.这个标签中可以添加事件而执行js，例如&lt; input&gt;<br>&lt; img src=”javascript:alert(‘xss’)”&gt;可以使用js的伪协议去执行xss代码，<br>当然也可以在img中导入一个外网带有xss代码链接，但是也不是所有的web浏览器都支持伪协议<br>第二种思路：产生自己的事件<br>js本来就是一种动态脚本语言<br>如果我们的输入在input标签中，后者能够自己写入一个input标签，<br>就可以构建自己的事件如onclick(点击鼠标)，onmouseover(鼠标移动)，onkeydown(敲击键盘)等响应事件<br>可以利用的事件一般分为3类：<br>1.用户接口IO（鼠标，键盘）<br>2.逻辑（处理的结果）<br>3.变化（对文档的修改）</strong></p>
+<h2 id="编码绕过、常用编码："><a href="#编码绕过、常用编码：" class="headerlink" title="编码绕过、常用编码："></a>编码绕过、常用编码：</h2><p><strong>URL编码：通过%和ascii码编码但是要确认服务器会对我们的输入解码，否则起到反作用<br>HTML实体编码：命名实体：以&amp;开头，分号结尾的，例如“&lt;”编码为“&amp;lt”<br>字符编码：十进制、十六进制ASCII码或unicode字符编码，样式为“&amp;#数值”，<br>                例如“&lt;”可以编码为“&lt;”和“&lt;”<br>js编码:四种编码形式，例如“e”为”\145”或”\x65”或”\u0065”<br>css编码：用一个反斜线()后面跟1~6位的十六进制数字，例如e可以编码为“\65”或”65”或”00065”<br>理解XSS编码顺序：在什么位置应该被谁理解</strong></p>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -668,7 +529,7 @@ mess <span class="token operator">=</span> base64<span class="token punctuation"
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://00yongshiwangzi.github.io/posts/942f.html">https://00yongshiwangzi.github.io/posts/942f.html</a>
+                    <a href="https://00yongshiwangzi.github.io/posts/3459/">https://00yongshiwangzi.github.io/posts/3459/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -898,54 +759,18 @@ mess <span class="token operator">=</span> base64<span class="token punctuation"
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/posts/57a7.html">
+                <a href="/posts/3459/">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/00yongshiwangzi/00yongshiwangzi.github.io/medias/featureimages/20.jpg" class="responsive-img" alt="sql-labs">
+                        <img src="https://cdn.jsdelivr.net/gh/00yongshiwangzi/00yongshiwangzi.github.io/medias/featureimages/2.jpg" class="responsive-img" alt="XSS学习笔记">
                         
-                        <span class="card-title">sql-labs</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-09-30
-                        </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-user fa-fw"></i>
-                            Cy_Dragon
-                            
-                        </span>
-                    </div>
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/posts/4981.html">
-                    <div class="card-image">
-                        
-                        
-                        <img src="https://cdn.jsdelivr.net/gh/00yongshiwangzi/00yongshiwangzi.github.io/medias/featureimages/21.jpg" class="responsive-img" alt="数据库操纵语言笔记">
-                        
-                        <span class="card-title">数据库操纵语言笔记</span>
+                        <span class="card-title">XSS学习笔记</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -956,7 +781,45 @@ mess <span class="token operator">=</span> base64<span class="token punctuation"
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-09-28
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-09-30
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            Cy_Dragon
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/posts/0/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="https://cdn.jsdelivr.net/gh/00yongshiwangzi/00yongshiwangzi.github.io/medias/featureimages/0.jpg" class="responsive-img" alt="">
+                        
+                        <span class="card-title"></span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-09-30
                             </span>
                         <span class="publish-author">
                             
