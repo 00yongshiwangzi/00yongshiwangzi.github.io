@@ -457,14 +457,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    644
+                    351
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    2 分
+                    1 分
                 </div>
                 
 
@@ -480,16 +480,14 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <hr>
-<p>featureImages: ‘<a target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/00yongshiwangzi/00yongshiwangzi.github.io/medias/featureimages/10.jpg'">https://cdn.jsdelivr.net/gh/00yongshiwangzi/00yongshiwangzi.github.io/medias/featureimages/10.jpg'</a><br>title= 文件上传漏洞笔记<br>abbrlink: ‘7954’</p>
+<p>title= SQL注入笔记<br>‘</p>
 <hr>
-<h1 id="文件上传漏洞："><a href="#文件上传漏洞：" class="headerlink" title="文件上传漏洞："></a>文件上传漏洞：</h1><p><strong>如果服务器配置不当或者没有进行足够的过滤，而导致用户可以向服务器上传任意文件<br>包括木马，病毒，恶意脚本或者WebShell等，并被脚本解析器执行，这就产生了文件上传漏洞<br>一句话木马（小马）：<!--?php @eval($_POST['test']);?--><br>需要和中国菜刀搭配</strong></p>
-<h2 id="中国菜刀的三个基本功能："><a href="#中国菜刀的三个基本功能：" class="headerlink" title="中国菜刀的三个基本功能："></a>中国菜刀的三个基本功能：</h2><p><strong>1.文件管理 2.数据库管理 3.虚拟终端</strong></p>
-<h2 id="前期需要搜集什么信息？"><a href="#前期需要搜集什么信息？" class="headerlink" title="前期需要搜集什么信息？"></a>前期需要搜集什么信息？</h2><p><strong>1.目标使用的语言<br>2.中间件<br>3.服务器系统<br>4.可以上传什么类型的文件</strong></p>
-<h1 id="解析漏洞："><a href="#解析漏洞：" class="headerlink" title="解析漏洞："></a>解析漏洞：</h1><h2 id="IIS6-0解析漏洞"><a href="#IIS6-0解析漏洞" class="headerlink" title="IIS6.0解析漏洞"></a>IIS6.0解析漏洞</h2><p><strong>1.目录解析：默认会把 .asp, .asa目录下的文件都解析成asp文件。<br>如：/test.asp/test.jpg<br>2.文件解析：<br>/test.asp;1.jpg<br>IIS6.0默认的可执行文件除了asp还包括 .asa、 .cer、 .cdx</strong></p>
-<h2 id="Apache解析漏洞"><a href="#Apache解析漏洞" class="headerlink" title="Apache解析漏洞"></a>Apache解析漏洞</h2><p><strong>Apache1.x和Apache2.x中存在解析漏洞<br>在解析文件时有一个顺序，当碰到不认识的扩展名时，将会从后向前解析<br>直到碰到认识的扩展名为止，如果都不认识，则会暴露其源码<br>如：test.php.xxx</strong></p>
-<h2 id="Nginx-lt-0-8-03空字节代码执行漏洞"><a href="#Nginx-lt-0-8-03空字节代码执行漏洞" class="headerlink" title="Nginx<0.8.03空字节代码执行漏洞"></a>Nginx&lt;0.8.03空字节代码执行漏洞</h2><p><strong>影响版本：0.5.x,0.6.x,0.7&lt;=0.7.65,0.8&lt;=0.8.37<br>Nginx在图片中嵌入PHP代码然后通过访问test.jpg%00.php来执行其中的代码</strong></p>
-<h2 id="常见的检测方式："><a href="#常见的检测方式：" class="headerlink" title="常见的检测方式："></a>常见的检测方式：</h2><p><strong>1.客户端检测(javascript检测文件扩展名)：可以通过Bp抓包进行绕过<br>2.服务端检测(文件扩展名检测)：黑白名单<br>   黑名单：文件名大小写绕过、名单列表绕过(如asa,cer,cdx,php3等)、0x00截断<br>   白名单:解析漏洞、0x00截断<br>3.服务端检测(MIME类型、Content-Type内容)<br>所谓MIME类型检测实际上就是客户端在上传文件到服务端的时候，服务端对客户端上传文件的<br>Content-Type类型进行检测，如果是白名单所允许的，则可以正常上传，否则上传失败</strong></p>
-<h2 id="常见的例子："><a href="#常见的例子：" class="headerlink" title="常见的例子："></a>常见的例子：</h2><p><strong>‘.gif’:’image/gif’<br>‘.doc’:’application/msword’<br>‘.asp’:’application/x-asp’<br>4.服务端检测(文件头检测)<br>插入服务器允许的文件头部进行绕过<br>如：GIF968a</strong></p>
+<h1 id="SQL注入"><a href="#SQL注入" class="headerlink" title="SQL注入"></a>SQL注入</h1><p><strong>静态网页：不存在SQL注入漏洞<br>动态网页：可能存在SQL注入漏洞</strong></p>
+<h2 id="简介："><a href="#简介：" class="headerlink" title="简介："></a>简介：</h2><p><strong>SQL注入是一种常见的Web安全漏洞，攻击者利用这个漏洞，<br>可以访问或修改数据，或者利用潜在的数据库漏洞进行攻击</strong></p>
+<h2 id="关于注入点的位置："><a href="#关于注入点的位置：" class="headerlink" title="关于注入点的位置："></a>关于注入点的位置：</h2><p><strong>GET数据<br>POST数据<br>HTTP头部(HTTP请求报文其他字段)<br>Cookie数据等</strong></p>
+<h2 id="SQL注入分类："><a href="#SQL注入分类：" class="headerlink" title="SQL注入分类："></a>SQL注入分类：</h2><p><strong>SQL注入根据注入数据类型，通常可分为数字型和字符型<br>根据注入手法分类，大致可以分为以下几个类别<br>1.联合查询注入<br>2.报错型注入<br>3.布尔型注入<br>4.基于时间延迟注入</strong></p>
+<h2 id="如何判断SQL注入"><a href="#如何判断SQL注入" class="headerlink" title="如何判断SQL注入"></a>如何判断SQL注入</h2><p><strong>**单引号判断<br>1.数字型注入判断：and1=1  and1=2<br>                              参数进行运算 +1 -1  ‘+’→’%2B’<br>2.字符型注入判断(需要闭合单引号)<br>‘and ‘1’=’1     ‘and’1’=’2<br>寻找显示位 order by 查询字段数目<br>查询语句1 union 查询语句2</strong></p>
+<p><strong>schemata       schema_name 所有的数据库名<br>tables             table_name表名  table_schema表所属的数据库<br>columns         column_name字段名  table_name表名  table_schema数据库<br>group_concat(字段)**</strong></p>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -767,13 +765,13 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/posts/3459.html">
+                <a href="/posts/0.html">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/00yongshiwangzi/00yongshiwangzi.github.io/medias/featureimages/2.jpg" class="responsive-img" alt="XSS学习笔记">
+                        <img src="https://cdn.jsdelivr.net/gh/00yongshiwangzi/00yongshiwangzi.github.io/medias/featureimages/0.jpg" class="responsive-img" alt="">
                         
-                        <span class="card-title">XSS学习笔记</span>
+                        <span class="card-title"></span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1034,7 +1032,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">5.5k</span>&nbsp;字
+                class="white-color">5.9k</span>&nbsp;字
             
             
             
