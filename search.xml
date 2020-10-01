@@ -12,6 +12,12 @@
       
       
       
+        <tags>
+            
+            <tag> Web,CTF </tag>
+            
+        </tags>
+      
     </entry>
     
     
@@ -24,6 +30,12 @@
         <content type="html"><![CDATA[<h1 id="SQL注入"><a href="#SQL注入" class="headerlink" title="SQL注入"></a>SQL注入</h1><p><strong>静态网页：不存在SQL注入漏洞<br>动态网页：可能存在SQL注入漏洞</strong></p><h2 id="简介："><a href="#简介：" class="headerlink" title="简介："></a>简介：</h2><p><strong>SQL注入是一种常见的Web安全漏洞，攻击者利用这个漏洞，<br>可以访问或修改数据，或者利用潜在的数据库漏洞进行攻击</strong></p><h2 id="关于注入点的位置："><a href="#关于注入点的位置：" class="headerlink" title="关于注入点的位置："></a>关于注入点的位置：</h2><p><strong>GET数据<br>POST数据<br>HTTP头部(HTTP请求报文其他字段)<br>Cookie数据等</strong></p><h2 id="SQL注入分类："><a href="#SQL注入分类：" class="headerlink" title="SQL注入分类："></a>SQL注入分类：</h2><p><strong>SQL注入根据注入数据类型，通常可分为数字型和字符型<br>根据注入手法分类，大致可以分为以下几个类别<br>1.联合查询注入<br>2.报错型注入<br>3.布尔型注入<br>4.基于时间延迟注入</strong></p><h2 id="如何判断SQL注入"><a href="#如何判断SQL注入" class="headerlink" title="如何判断SQL注入"></a>如何判断SQL注入</h2><p><strong>**单引号判断<br>1.数字型注入判断：and1=1  and1=2<br>                              参数进行运算 +1 -1  ‘+’→’%2B’<br>2.字符型注入判断(需要闭合单引号)<br>‘and ‘1’=’1     ‘and’1’=’2<br>寻找显示位 order by 查询字段数目<br>查询语句1 union 查询语句2</strong></p><p><strong>schemata       schema_name 所有的数据库名<br>tables             table_name表名  table_schema表所属的数据库<br>columns         column_name字段名  table_name表名  table_schema数据库<br>group_concat(字段)**</strong></p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
       
       
+      
+        <tags>
+            
+            <tag> Web,CTF </tag>
+            
+        </tags>
       
     </entry>
     
@@ -38,6 +50,12 @@
       
       
       
+        <tags>
+            
+            <tag> Web,CTF </tag>
+            
+        </tags>
+      
     </entry>
     
     
@@ -50,6 +68,12 @@
         <content type="html"><![CDATA[<h1 id="sqli-labs-less-1"><a href="#sqli-labs-less-1" class="headerlink" title="sqli-labs less-1"></a><strong>sqli-labs less-1</strong></h1><p><img src="https://img-blog.csdnimg.cn/20200428184940527.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1ODEzOTgw,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><strong>1.?id=1<br><img src="https://img-blog.csdnimg.cn/20200428185128798.png" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20200428185141286.png" alt="在这里插入图片描述"><br>2.?id=1’报错，发现注入点<br><img src="https://img-blog.csdnimg.cn/20200428185208528.png" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20200428185216186.png" alt="在这里插入图片描述"><br>3.添加注释，使其不报错<br><img src="https://img-blog.csdnimg.cn/2020042818523544.png" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20200428185241751.png" alt="在这里插入图片描述"><br>4.使用order by 进行查询长度，得出有3个字节<br><img src="https://img-blog.csdnimg.cn/20200428185249454.png" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20200428185255441.png" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20200428185320168.png" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20200428185326483.png" alt="在这里插入图片描述"><br>5.使用union select联合查询显示位，注意：最前面的数改为-1或者很大的值<br><img src="https://img-blog.csdnimg.cn/20200428185335180.png" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20200428185346923.png" alt="在这里插入图片描述"><br>6.database()查询当前数据库名<br><img src="https://img-blog.csdnimg.cn/2020042818535675.png" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20200428185401490.png" alt="在这里插入图片描述"><br>7. version()查询当前数据库版本<br><img src="https://img-blog.csdnimg.cn/20200428185608300.png" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20200428185614530.png" alt="在这里插入图片描述"><br>8. (select group_concat(schema_name) from information_schema.schemata )查看所有数据库名<br><img src="https://img-blog.csdnimg.cn/2020042818570396.png" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20200428185709930.png" alt="在这里插入图片描述"><br>9. (select group_concat(table_name) from information_schema.tables where table_schema=’security’)查看security数据库中的所有表<br><img src="https://img-blog.csdnimg.cn/20200428185718490.png" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20200428185722279.png" alt="在这里插入图片描述"><br>10.(select group_concat(column_name) from information_schema.columns where table_name=’users’)查看users表下的所有列<br><img src="https://img-blog.csdnimg.cn/20200428185729161.png" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20200428185732778.png" alt="在这里插入图片描述"><br>11.(select group_concat(username) from security.users）查看username列下的数据<br>    (select group_concat(password) from security.users)     查看password列下的数据<br><img src="https://img-blog.csdnimg.cn/20200428185742437.png" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/2020042818574752.png" alt="在这里插入图片描述"></strong></p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
       
       
+      
+        <tags>
+            
+            <tag> Web,CTF </tag>
+            
+        </tags>
       
     </entry>
     
@@ -64,6 +88,12 @@
       
       
       
+        <tags>
+            
+            <tag> CTF </tag>
+            
+        </tags>
+      
     </entry>
     
     
@@ -76,6 +106,12 @@
         <content type="html"><![CDATA[<p> 刚在数据库课上学了数据库操作语言，对于英语不好的我来说又要记不少单词，趁着这次作业，把刚学的一些语法记一下<br> 注：<br>1.文中路径和文件名请自行替换<br> 2.报错大多是因为一些细微之差，比如冒号引号的缺失，请多多注意</p><h1 id="一-新建数据库"><a href="#一-新建数据库" class="headerlink" title="一.新建数据库"></a>一.新建数据库</h1><pre class=" language-javascript"><code class="language-javascript">CREATE DATABASE test1 #新建数据的名字为test1ON     #以下是指定数据库文件和文件组属性PRIMARY  #主文件组文件属性<span class="token punctuation">(</span>    NAME<span class="token operator">=</span><span class="token string">'test1_dat1'</span><span class="token punctuation">,</span>  #文件名    FILENAME<span class="token operator">=</span><span class="token string">'E:\sql lianxi\test1.mdf'</span><span class="token punctuation">,</span>    #文件路径<span class="token punctuation">,</span>最后文件格式为<span class="token punctuation">.</span>mdf    SIZE<span class="token operator">=</span>20MB<span class="token punctuation">,</span>    #文件初始大小    MAXSIZE<span class="token operator">=</span>60MB<span class="token punctuation">,</span>    #文件最大大小，不限制则填UNLIMITED    FILEGROWTH<span class="token operator">=</span>5MB     #文件的增长增量<span class="token punctuation">)</span><span class="token punctuation">,</span>FILEGROUP test1_Group1    #其他文件组名<span class="token punctuation">(</span>   NAME <span class="token operator">=</span> <span class="token string">'test1_dat2'</span><span class="token punctuation">,</span>   #文件名   FILENAME <span class="token operator">=</span> <span class="token string">'E:\sql lianxi\test1.ndf'</span><span class="token punctuation">,</span>     #文件路径，最后文件格式为<span class="token punctuation">.</span>ndf   SIZE <span class="token operator">=</span> 10MB<span class="token punctuation">,</span>        MAXSIZE <span class="token operator">=</span> UNLIMITED<span class="token punctuation">,</span>   FILEGROWTH <span class="token operator">=</span> <span class="token number">10</span><span class="token operator">%</span><span class="token punctuation">)</span>LOG ON   #日志文件<span class="token punctuation">(</span>    NAME<span class="token operator">=</span><span class="token string">'test1_log'</span><span class="token punctuation">,</span>    FILENAME<span class="token operator">=</span><span class="token string">'E:\sql lianxi\test1_log.ldf'</span><span class="token punctuation">,</span>    SIZE<span class="token operator">=</span>50MB<span class="token punctuation">,</span>    MAXSIZE<span class="token operator">=</span>100MB<span class="token punctuation">,</span>    FILEGROWTH<span class="token operator">=</span>10MB<span class="token punctuation">)</span></code></pre><h1 id="二-修改及删除数据库"><a href="#二-修改及删除数据库" class="headerlink" title="二.修改及删除数据库"></a>二.修改及删除数据库</h1><pre class=" language-javascript"><code class="language-javascript"><span class="token comment" spellcheck="true">// </span>ALTER DATABASE test1  #需要更改的数据库名字test1 ADD  FILEGROUP  test1_Group2   #指定要增加的数据文件 GOALTER DATABASE test1  ADD FILE  #增加文件<span class="token punctuation">(</span>     NAME <span class="token operator">=</span> <span class="token string">'test1_dat3'</span><span class="token punctuation">,</span>    #文件名   FILENAME <span class="token operator">=</span> <span class="token string">'D:\data\Store3add.ndf'</span><span class="token punctuation">,</span>   #文件路径   SIZE <span class="token operator">=</span> 2MB<span class="token punctuation">,</span>    #文件初始大小   MAXSIZE <span class="token operator">=</span> 10MB<span class="token punctuation">,</span>      #文件最大大小   FILEGROWTH <span class="token operator">=</span> 1MB   #文件增量大小<span class="token punctuation">)</span>TO  FILEGROUP  test1_Group2   #指定该文件是属于哪个文件组的ALTER DATABASE  test1MODIFY  FILE   #指定要更改的文件属性<span class="token punctuation">(</span>   NAME<span class="token operator">=</span> test1_dat3<span class="token punctuation">,</span>MAXSIZE <span class="token operator">=</span> 100MB  #将test_dat3文件的最大大小改为100M<span class="token punctuation">)</span>ALTER DATABASE  test1REMOVE  FILE  test1_dat3   #删除文件test1_dat3ALTER DATABASE  test1 REMOVE FILEGROUP test1_Group2   #删除文件组test1_Group2ALTER DATABASE test1MODIFY NAME <span class="token operator">=</span> test2   #重命名数据库test1名字为test2DROP DATABASE test1 #删除数据库test1</code></pre><h1 id="三-表的创建，修改及删除"><a href="#三-表的创建，修改及删除" class="headerlink" title="三.表的创建，修改及删除"></a>三.表的创建，修改及删除</h1><h2 id="1-表的创建"><a href="#1-表的创建" class="headerlink" title="1.表的创建"></a>1.表的创建</h2><pre class=" language-USE"><code class="language-USE">CREATE TABLE Employee   #创建Employee表(   EmplID char(4) NOT NULL PRIMARY KEY, #列名，数据类型，是否为空，主键   EmplName char(8) NOT NULL,   Sex char(2) NOT NULL,    Birthday date NOT NULL,   Address char(20) NULL,   Wages money NOT NULL,   DeptID char(4) NOT NULL)GO</code></pre><h2 id="2-修改表"><a href="#2-修改表" class="headerlink" title="2.修改表"></a>2.修改表</h2><pre class=" language-USE"><code class="language-USE">ALTER TABLE Goods2 ADD Remarks char(10)     #增加列Remarks,数据类型为char(10)ALTER TABLE Goods2 ALTER COLUMN Remarks char(12) #修改Remarks列的数据类型为char(12)ALTER TABLE Goods2  DROP COLUMN Remarks #删除Remarks列</code></pre><h2 id="3-删除表"><a href="#3-删除表" class="headerlink" title="3.删除表"></a>3.删除表</h2><p> <code>DROP TABLE table_name</code></p><h2 id="4-插入语句"><a href="#4-插入语句" class="headerlink" title="4.插入语句"></a>4.插入语句</h2><pre class=" language-USE"><code class="language-USE">INSERT INTO Consumer values (1,'刘宇豪','男','仁厚街21号')由于插入的数据包含各列的值并按表中各列的顺序列出这些值，所以省略列名表(colume_list)。</code></pre><pre class=" language-USE"><code class="language-USE">INSERT INTO Consumer (ConsumerID, Name, Sex, Address) values (1,'刘宇豪','男','仁厚街21号')本例与上例功能完全相同，但本例显式列出列名表(colume_list)，显示列表可用于插入值少于列的个数或插入与列的顺序不同的数据。</code></pre><h2 id="5-修改语句"><a href="#5-修改语句" class="headerlink" title="5.修改语句"></a>5.修改语句</h2><p>【例】 在Consumer表中将ConsumerID为1的客户的Address修改为’沙湾路35号’。</p><pre class=" language-USE"><code class="language-USE">UPDATE Consumer   #指定修改的表SET Address ='沙湾路35号'  #先写修改内容WHERE ConsumerID=1   #再指定是修改哪个</code></pre><p>【例】删除Consumer表中客户号为1的记录。</p><pre class=" language-USE"><code class="language-USE">DELETE Consumer  #删除Consumer表中的内容WHERE ConsumerID=1#若没有指定修改内容，则删除所有行</code></pre><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
       
       
+      
+        <tags>
+            
+            <tag> sql server </tag>
+            
+        </tags>
       
     </entry>
     
@@ -90,6 +126,12 @@
       
       
       
+        <tags>
+            
+            <tag> Web,CTF </tag>
+            
+        </tags>
+      
     </entry>
     
     
@@ -102,6 +144,12 @@
         <content type="html"><![CDATA[<p>@<a href="%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8CMISC%E6%96%B0%E6%89%8B%E5%8C%BA%E5%89%8D%E5%85%AD%E9%A2%98">TOC</a><br>写在前面：本人CTF小白，能写出这篇文章需要感谢CSDN其他前辈的文章和攻防世界中前辈的wp，如果文中有不对的地方，多谢各位指出。</p><p>本文习题均出自攻防世界的MISC新手区，链接如下：<br><a href="https://adworld.xctf.org.cn/">攻防世界</a></p><p>有一位前辈的文章对我有很大帮助，包含了很多CTF的解码方式，我把网址放在前面，希望对和我一样刚开始接触CTF的小白一些帮助。<br><a href="https://blog.csdn.net/qq_41638851/article/details/100526839#0x017_64">CTF中常见密码题解密网站总结</a></p><h1 id="1-this-is-flag"><a href="#1-this-is-flag" class="headerlink" title="1.this is flag"></a>1.this is flag</h1><p>答案就在题目中。</p><blockquote><p>flag{th1s_!s_a_d4m0_4la9}</p></blockquote><h1 id="2-pdf"><a href="#2-pdf" class="headerlink" title="2.pdf"></a>2.pdf</h1><p>题目中说图下面什么也没有，我们就猜测图下面有东西。为了看到图片下面的东西，我们将下载的PDF文件转换成word文件，可以看到图片下隐藏的flag。将图片移开，看的更加清楚。下面附上一个可以在线将PDF文件转换成word文件的网站：</p><p><a href="https://app.xunjiepdf.com/pdf2word/">pdf转word在线转换</a><img src="https://img-blog.csdnimg.cn/20200321171508920.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1ODEzOTgw,size_16,color_FFFFFF,t_70" alt="这是将图片移开之后的截图"></p><blockquote><p>flag{security_through_obscurity}</p></blockquote><h1 id="3-gif"><a href="#3-gif" class="headerlink" title="3.gif"></a>3.gif</h1><p>打开文件，发现里面有很多黑色图片和白色图片，和二进制中的1和0很像，于是黑图片为1，白图片为0，得到一串二进制数，将二进制转为字符，就能得到flag。（有的编程大佬可以通过写脚本来直接生成flag，这里由于本人实力有限，只能一个一个对照。本人正在学python,等我会写脚本了，再来补充。）<br>附二进制转文本网站<br><a href="http://www.txttool.com/wenben_binarystr.asp">二进制转文本</a><br><img src="https://img-blog.csdnimg.cn/20200321194314342.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1ODEzOTgw,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p><blockquote><p>flag{FuN_giF}</p></blockquote><h1 id="4-如来十三掌"><a href="#4-如来十三掌" class="headerlink" title="4.如来十三掌"></a>4.如来十三掌</h1><p>打开文件得到一段玄乎的文字，这种编码被称为“与佛论禅”，通过与佛论禅编码，可以得到一串新的编码。<br>这里提醒两点：<br>1.要在编码前加上“佛曰：”<br>2.解码时注意密文在解码网站上的位置不要弄错了，本人就是一开始位置放错了，一直显示解码失败。<br>附上与佛论禅解码网站：<br><a href="http://www.keyfc.net/bbs/tools/tudoucode.aspx">与佛论禅解码</a><br><img src="https://img-blog.csdnimg.cn/20200321200544714.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1ODEzOTgw,size_16,color_FFFFFF,t_70" alt="与佛论禅"><br>然后注意到题目是“如来十三掌”，这个“如来”对应的是“与佛论禅”，这个“十三”对应的是另一种叫做“ROT13”的编码。ROT13编码后得到一串代码。<br>附ROT13编码网站：<a href="https://www.qqxiuzi.cn/bianma/ROT5-13-18-47.php">ROT13编码</a><br><img src="https://img-blog.csdnimg.cn/20200321201534921.png" alt="ROT13编码">这依然不是最后的答案，最后再用一种最常见的编码形式：base64,就可以得到最后的flag。<br>附base64解码网站：<br><a href="https://base64.supfree.net/">base64解码</a><br><img src="https://img-blog.csdnimg.cn/20200321202746506.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1ODEzOTgw,size_16,color_FFFFFF,t_70" alt="base64编码"></p><blockquote><p>flag{bdscjhbkzmnfrdhbvckijndskvbkjdsab}</p></blockquote><h1 id="5-give-you-flag"><a href="#5-give-you-flag" class="headerlink" title="5.give_you_flag"></a>5.give_you_flag</h1><p>下载附件中的动态图。从中可以看出动态图中有一张图片里有二维码。于是使用ps打开动态图，在右下角的图层中找到了带有动态图的图层。却发现这张二维码是不完整的（缺少了三个角位置处的定位符）于是在网上随便找一个完整的普通二维码，利用ps将三个定位符截下来补充到不完整的二维码中。扫描二维码，得到flag.</p><p>下图为不完整的二维码图。<br><img src="https://img-blog.csdnimg.cn/20200321173356254.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1ODEzOTgw,size_16,color_FFFFFF,t_70" alt="不完整的二维码">    下图为还原后的二维码图。<br><img src="https://img-blog.csdnimg.cn/20200321173453520.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1ODEzOTgw,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p><blockquote><p>flag{e7d478cf6b915f50ab1277f78502a2c5}</p></blockquote><h1 id="6-坚持60s"><a href="#6-坚持60s" class="headerlink" title="6.坚持60s"></a>6.坚持60s</h1><p>  下载附件，是一个.jar类型的，是一个小游戏。这里我们需要一个反编译器，查看小游戏的源代码。这里我用的是jd-gui。根据源码来看，这个游戏坚持60s后还真能得到flag,想试试的可以试一下，本人最多到三十多秒就不行了。<br>  附上下载链接： <a href="https://jd-gui.apponic.com/">jd-gui</a><br>  在源代码里找到flag：<br>  <img src="https://img-blog.csdnimg.cn/20200321204915639.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1ODEzOTgw,size_16,color_FFFFFF,t_70" alt="源代码"></p><blockquote><p>flag{RGFqaURhbGlfSmlud2FuQ2hpamk=}</p></blockquote><p>  这是本人在CSDN中发布的第一篇文章，希望和大家一起进步。</p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
       
       
+      
+        <tags>
+            
+            <tag> CTF </tag>
+            
+        </tags>
       
     </entry>
     
