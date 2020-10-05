@@ -6,7 +6,7 @@
   <link href="https://00yongshiwangzi.github.io/atom.xml" rel="self"/>
   
   <link href="https://00yongshiwangzi.github.io/"/>
-  <updated>2020-10-01T05:50:22.773Z</updated>
+  <updated>2020-10-05T15:17:57.442Z</updated>
   <id>https://00yongshiwangzi.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>SQL查询语句练习</title>
+    <link href="https://00yongshiwangzi.github.io/posts/9b09.html"/>
+    <id>https://00yongshiwangzi.github.io/posts/9b09.html</id>
+    <published>2020-10-05T15:18:21.260Z</published>
+    <updated>2020-10-05T15:17:57.442Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;SQL查询语句练习&quot;&gt;&lt;a href=&quot;#SQL查询语句练习&quot; class=&quot;headerlink&quot; title=&quot;SQL查询语句练习&quot;&gt;&lt;/a&gt;SQL查询语句练习&lt;/h1&gt;&lt;h2 id=&quot;有如下三个关系：&quot;&gt;&lt;a href=&quot;#有如下三个关系：&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="数据库笔记" scheme="https://00yongshiwangzi.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="sql server" scheme="https://00yongshiwangzi.github.io/tags/sql-server/"/>
+    
+  </entry>
   
   <entry>
     <title>文件上传漏洞</title>

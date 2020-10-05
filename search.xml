@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>SQL查询语句练习</title>
+      <link href="posts/9b09.html"/>
+      <url>posts/9b09.html</url>
+      
+        <content type="html"><![CDATA[<h1 id="SQL查询语句练习"><a href="#SQL查询语句练习" class="headerlink" title="SQL查询语句练习"></a>SQL查询语句练习</h1><h2 id="有如下三个关系："><a href="#有如下三个关系：" class="headerlink" title="有如下三个关系："></a>有如下三个关系：<img src="https://img-blog.csdnimg.cn/20201005230107377.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1ODEzOTgw,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></h2><h2 id="用T—SQL命令按要求完成下列查询："><a href="#用T—SQL命令按要求完成下列查询：" class="headerlink" title="用T—SQL命令按要求完成下列查询："></a>用T—SQL命令按要求完成下列查询：</h2><p>1：查询所有年龄在20岁以下的学生姓名及年龄</p><pre><code>SELECT  SNAME,AGEFROM  SWHILE  AGE&lt;20</code></pre><p>2：查询考试成绩有不及格的学生的学号。</p><pre><code>SELECT  DISTINCT  SNOFROM  SCWHILE  GRADE&lt;60</code></pre><p>3：查询所有年龄在20至23岁之间的学生姓名、系别及年龄。</p><pre><code>SELECT  SNAME,SDEPT,AGEFROM  SWHILE  AGE&gt;=20  AND  AGE&lt;=23</code></pre><p>4：查询计算机系、数学系、信息系的学生姓名、性别。</p><pre><code>SELECT  SNAME,SEXFROM  SWHILE  SDEPT  IN  (‘计算机系’,’数学系’,’信息系’)</code></pre><p>5：查询所有不姓“张”的学生的姓名。</p><pre><code>SELECT  SNAMEFROM  SWHILE  SNAME  NOT  LIKE  ‘张%’</code></pre><p>6：查询姓“上官”且全名为3个汉字的学生姓名。</p><pre><code>SELECT  SNAMEFROM  SWHILE  SNAME  LIKE  ‘上官_’</code></pre><p>7：查询DB_Design课程的课程号。</p><pre><code>SELECT  CNOFROM  CWHILE  CNMAE=’ DB_Design’</code></pre><p>8：查询缺考的学生的学号和课程号。</p><pre><code>SELECT  SNO,CNOFROM  SCWHILE  GRADE  IS  NULL</code></pre><p>9：查询计算机系20岁以下的学生的学号和姓名。</p><pre><code>SELECT  SNO,SNAMEFROM  SWHILE  SDEPT=’计算机系’  AND  AGE&lt;20</code></pre><p>10：查询选修了C3课程的学生的学号和成绩，其结果按分数的降序排列。</p><pre><code>SELECT  SNO,GRADEFROM  SCWHILE  CNO=’C3’ORDER  BY  GRADE  DESC</code></pre><p>11：查询全体学生的情况，查询结果按所在系升序排列，对同一系中的学生按年龄降序排列。</p><pre><code>SELECT  *FROM  SORDER  BY  SDEPT  ASC,AGR  DESC</code></pre><p>12：查询学生总人数。</p><pre><code>SELECT  COUNT(SNO)FROM  S</code></pre><p>13：查询选修了课程的学生人数。</p><pre><code>SELECT  COUNT(DISTINCT  SNO)FROM  SC</code></pre><p>14：计算选修了C1课程的学生平均成绩。</p><pre><code>SELECT  AVG(GRADE)FROME  SCWHILE  CNO=’C1’</code></pre><p>15：查询学习C3课程的学生最高分数。</p><pre><code>SELECT  MAX(GRADE)FROME  SCWHILE  CNO=’C3’</code></pre><p>16：查询各个课程号与相应的选课人数。</p><pre><code>SELECT  CNO,COUNT(SNO)FROME  SCGROUP  BY  CNO</code></pre><p>17：查询选修了C2课程且成绩在90分以上的所有学生。</p><pre><code>SELECT  SNOFROM  SCWHERE  CNO='C2'  AND  GRADE&gt;90</code></pre><p>18：查询计算机系选修了3门以上课程的学生的学号。</p><pre><code>SELECT  SNOFROM S,SCWHERE  S.SNO=SC.SNO  AND  SDEPT = '计算机系' GROUP  BY  SNOHAVING COUNT(*)&gt;3</code></pre><p>19：查询与“张三”在同一个系学习的学生学号、姓名和系别。</p><pre><code>SELECT  SNO,SNAME,SDEPTFROM  SWHERE  SDEPT  IN    (SELECT  SDEPT     FROM  S     WHERE SNAM='张三')</code></pre><p>20：查询选修课程名为“数据库”的学生学号和姓名。</p><pre><code>SELECT  SNO,SNAMEFROM  S,SC,CWHERE  S.SNO=SC.SNO  AND  C.CNO=SC.CNO  AND   CNO='数据库'</code></pre><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      <categories>
+          
+          <category> 数据库笔记 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> sql server </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>文件上传漏洞</title>
       <link href="posts/4491.html"/>
       <url>posts/4491.html</url>
