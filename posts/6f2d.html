@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="SQL注入, 00yongshiwangzi">
+    <meta name="keywords" content="数据库索引与视图笔记, 00yongshiwangzi">
     <meta name="description" content="努力的话，天才也可以超越！">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>SQL注入 | Cy_Dragon Blog</title>
+    <title>数据库索引与视图笔记 | Cy_Dragon Blog</title>
     <link rel="icon" type="image/jpeg" href="/logo.jpg">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -309,12 +309,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/00yongshiwangzi/00yongshiwangzi.github.io/medias/featureimages/8.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/00yongshiwangzi/00yongshiwangzi.github.io/medias/featureimages/11.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">SQL注入</h1>
+                    <h1 class="description center-align post-title">数据库索引与视图笔记</h1>
                 </div>
             </div>
         </div>
@@ -431,8 +431,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Web-CTF/">
-                                <span class="chip bg-color">Web,CTF</span>
+                            <a href="/tags/sql-server/">
+                                <span class="chip bg-color">sql server</span>
                             </a>
                         
                     </div>
@@ -443,8 +443,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/CTF%E7%AC%94%E8%AE%B0/" class="post-category">
-                                CTF笔记
+                            <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AC%94%E8%AE%B0/" class="post-category">
+                                数据库笔记
                             </a>
                         
                     </div>
@@ -456,21 +456,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-10-01
+                    2020-10-18
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-10-01
+                    2020-10-18
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    345
+                    420
                 </div>
                 
 
@@ -492,12 +492,35 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="SQL注入"><a href="#SQL注入" class="headerlink" title="SQL注入"></a>SQL注入</h1><p><strong>静态网页：不存在SQL注入漏洞<br>动态网页：可能存在SQL注入漏洞</strong></p>
-<h2 id="简介："><a href="#简介：" class="headerlink" title="简介："></a>简介：</h2><p><strong>SQL注入是一种常见的Web安全漏洞，攻击者利用这个漏洞，<br>可以访问或修改数据，或者利用潜在的数据库漏洞进行攻击</strong></p>
-<h2 id="关于注入点的位置："><a href="#关于注入点的位置：" class="headerlink" title="关于注入点的位置："></a>关于注入点的位置：</h2><p><strong>GET数据<br>POST数据<br>HTTP头部(HTTP请求报文其他字段)<br>Cookie数据等</strong></p>
-<h2 id="SQL注入分类："><a href="#SQL注入分类：" class="headerlink" title="SQL注入分类："></a>SQL注入分类：</h2><p><strong>SQL注入根据注入数据类型，通常可分为数字型和字符型<br>根据注入手法分类，大致可以分为以下几个类别<br>1.联合查询注入<br>2.报错型注入<br>3.布尔型注入<br>4.基于时间延迟注入</strong></p>
-<h2 id="如何判断SQL注入"><a href="#如何判断SQL注入" class="headerlink" title="如何判断SQL注入"></a>如何判断SQL注入</h2><p><strong>**单引号判断<br>1.数字型注入判断：and1=1  and1=2<br>                              参数进行运算 +1 -1  ‘+’→’%2B’<br>2.字符型注入判断(需要闭合单引号)<br>‘and ‘1’=’1     ‘and’1’=’2<br>寻找显示位 order by 查询字段数目<br>查询语句1 union 查询语句2</strong></p>
-<p><strong>schemata       schema_name 所有的数据库名<br>tables             table_name表名  table_schema表所属的数据库<br>columns         column_name字段名  table_name表名  table_schema数据库<br>group_concat(字段)**</strong></p>
+                <h1 id="一、索引"><a href="#一、索引" class="headerlink" title="一、索引"></a>一、索引</h1><p>INDEX   索引（默认为非唯一非聚集）<br>UNION  INDEX  唯一索引<br>CLUSTERED INDEX 聚集索引</p>
+<h2 id="1-创建索引："><a href="#1-创建索引：" class="headerlink" title="1.创建索引："></a>1.创建索引：</h2><p>例：对Employee中的姓名列建立非聚集索引Employee_name</p>
+<pre><code>CREATE INDEX Employee_name ON Employee(EmplName)</code></pre>
+<p>例：对SalesOrder中的商品号和订单号建立唯一聚集索引<br>CREATE UNION CLUSTERED INDEX IX_GoodsIDOrderID ON SalesOrder(GoodsID,OrderID)</p>
+<h2 id="2-使用系统存储过程查看索引属性："><a href="#2-使用系统存储过程查看索引属性：" class="headerlink" title="2.使用系统存储过程查看索引属性："></a>2.使用系统存储过程查看索引属性：</h2><pre><code>EXE sp_helpindex Employee</code></pre>
+<p>   其中Employee是需要查看索引的表名-</p>
+<h2 id="3-修改索引"><a href="#3-修改索引" class="headerlink" title="3.修改索引"></a>3.修改索引</h2><p>REBUILD  重建索引<br>rebuild_index_option  重建索引选项<br>例：修改索引IX_DiscountTotal,将填充因子（FILLFACTOR）改为80</p>
+<pre><code>ALTER INDEX IX_DiscountTotal ON OrderDetail
+REBUILD  WITH(PAD_INDEX=ON,FILLFACTOR=80)</code></pre>
+<h2 id="4-删除索引"><a href="#4-删除索引" class="headerlink" title="4.删除索引"></a>4.删除索引</h2><p>例：删除已建索引IX_DiscountToal</p>
+<pre><code>DROP INDEX OrderDetail.IX_DiscountToal6</code></pre>
+<h1 id="二、视图"><a href="#二、视图" class="headerlink" title="二、视图"></a>二、视图</h1><h2 id="1-创建视图"><a href="#1-创建视图" class="headerlink" title="1.创建视图"></a>1.创建视图</h2><p>例：创建StoreSales数据库上的视图Emp_view，视图包含Employee表的全部列。</p>
+<pre><code>CREATE VIEW Emp_view
+AS
+SELECT *FROM Employee</code></pre>
+<h2 id="2-查询视图"><a href="#2-查询视图" class="headerlink" title="2.查询视图"></a>2.查询视图</h2><p>例：从视图Emp_view查询年龄大于40的员工的员工号、姓名和年龄。</p>
+<pre><code>SELECT EmplID,EmplName,2020-year(Birthday)as '年龄'
+FROM Emp_view
+WHERE EmplName=’刘强’</code></pre>
+<h2 id="3-更新视图"><a href="#3-更新视图" class="headerlink" title="3.更新视图"></a>3.更新视图</h2><p>插入数据：<br>例：向视图Emp_view中插入一行数据“E007，张三，男，1996-3-6，5000，D002”</p>
+<pre><code>INSERT INTO Emp_view VALUES('E007','张三','男','1996-3-6',' ','5000','D002')</code></pre>
+<p>修改数据：<br>例：修改视图Emp_view，将员工张三的工资改为6000,部门号改为D001</p>
+<pre><code>UPDATE Emp_view SET Wages='6000',DeptID='D001'
+WHERE EmplName='张三'</code></pre>
+<p>例：删除视图Emp_view中张三这名员工的相关信息</p>
+<pre><code>DELETE FROM Emp_view
+WHERE EmplName='张三'</code></pre>
+<h2 id="4-删除视图"><a href="#4-删除视图" class="headerlink" title="4.删除视图"></a>4.删除视图</h2><pre><code>DROP VIEW Emp_view </code></pre>
+<pre><code>DROP VIEW EmpDep_view</code></pre>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -541,7 +564,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://00yongshiwangzi.github.io/posts/6721.html">https://00yongshiwangzi.github.io/posts/6721.html</a>
+                    <a href="https://00yongshiwangzi.github.io/posts/6f2d.html">https://00yongshiwangzi.github.io/posts/6f2d.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -579,8 +602,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Web-CTF/">
-                                    <span class="chip bg-color">Web,CTF</span>
+                                <a href="/tags/sql-server/">
+                                    <span class="chip bg-color">sql server</span>
                                 </a>
                             
                         </div>
@@ -751,7 +774,7 @@
         repo: 'gitalk',
         owner: '00yongshiwangzi',
         admin: "00yongshiwangzi",
-        id: '2020-10-01T13-25-44',
+        id: '2020-10-18T16-17-28',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -775,16 +798,17 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/posts/4491.html">
+                <a href="/posts/6f2d.html">
                     <div class="card-image">
                         
-                        <img src="https://cdn.jsdelivr.net/gh/00yongshiwangzi/00yongshiwangzi.github.io/medias/featureimages/9.jpg" class="responsive-img" alt="文件上传漏洞">
+                        <img src="https://cdn.jsdelivr.net/gh/00yongshiwangzi/00yongshiwangzi.github.io/medias/featureimages/11.jpg" class="responsive-img" alt="数据库索引与视图笔记">
                         
-                        <span class="card-title">文件上传漏洞</span>
+                        <span class="card-title">数据库索引与视图笔记</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -794,26 +818,27 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-10-01
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-10-18
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/CTF%E7%AC%94%E8%AE%B0/" class="post-category">
-                                    CTF笔记
+                            <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AC%94%E8%AE%B0/" class="post-category">
+                                    数据库笔记
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Web-CTF/">
-                        <span class="chip bg-color">Web,CTF</span>
+                    <a href="/tags/sql-server/">
+                        <span class="chip bg-color">sql server</span>
                     </a>
                     
                 </div>
@@ -827,12 +852,12 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/3459.html">
+                <a href="/posts/9b09.html">
                     <div class="card-image">
                         
-                        <img src="https://cdn.jsdelivr.net/gh/00yongshiwangzi/00yongshiwangzi.github.io/medias/featureimages/2.jpg" class="responsive-img" alt="XSS学习笔记">
+                        <img src="https://cdn.jsdelivr.net/gh/00yongshiwangzi/00yongshiwangzi.github.io/medias/featureimages/10.jpg" class="responsive-img" alt="SQL查询语句练习">
                         
-                        <span class="card-title">XSS学习笔记</span>
+                        <span class="card-title">SQL查询语句练习</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -843,14 +868,14 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-09-30
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-10-05
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/CTF%E7%AC%94%E8%AE%B0/" class="post-category">
-                                    CTF笔记
+                            <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AC%94%E8%AE%B0/" class="post-category">
+                                    数据库笔记
                                 </a>
                             
                             
@@ -860,8 +885,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Web-CTF/">
-                        <span class="chip bg-color">Web,CTF</span>
+                    <a href="/tags/sql-server/">
+                        <span class="chip bg-color">sql server</span>
                     </a>
                     
                 </div>

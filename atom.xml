@@ -6,7 +6,7 @@
   <link href="https://00yongshiwangzi.github.io/atom.xml" rel="self"/>
   
   <link href="https://00yongshiwangzi.github.io/"/>
-  <updated>2020-10-06T11:49:22.558Z</updated>
+  <updated>2020-10-18T08:32:15.126Z</updated>
   <id>https://00yongshiwangzi.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>数据库索引与视图笔记</title>
+    <link href="https://00yongshiwangzi.github.io/posts/6f2d.html"/>
+    <id>https://00yongshiwangzi.github.io/posts/6f2d.html</id>
+    <published>2020-10-18T08:17:28.156Z</published>
+    <updated>2020-10-18T08:32:15.126Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;一、索引&quot;&gt;&lt;a href=&quot;#一、索引&quot; class=&quot;headerlink&quot; title=&quot;一、索引&quot;&gt;&lt;/a&gt;一、索引&lt;/h1&gt;&lt;p&gt;INDEX   索引（默认为非唯一非聚集）&lt;br&gt;UNION  INDEX  唯一索引&lt;br&gt;CLUSTERED</summary>
+        
+      
+    
+    
+    
+    <category term="数据库笔记" scheme="https://00yongshiwangzi.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="sql server" scheme="https://00yongshiwangzi.github.io/tags/sql-server/"/>
+    
+  </entry>
   
   <entry>
     <title>SQL查询语句练习</title>

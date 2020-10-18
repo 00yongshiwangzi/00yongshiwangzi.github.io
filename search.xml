@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>数据库索引与视图笔记</title>
+      <link href="posts/6f2d.html"/>
+      <url>posts/6f2d.html</url>
+      
+        <content type="html"><![CDATA[<h1 id="一、索引"><a href="#一、索引" class="headerlink" title="一、索引"></a>一、索引</h1><p>INDEX   索引（默认为非唯一非聚集）<br>UNION  INDEX  唯一索引<br>CLUSTERED INDEX 聚集索引</p><h2 id="1-创建索引："><a href="#1-创建索引：" class="headerlink" title="1.创建索引："></a>1.创建索引：</h2><p>例：对Employee中的姓名列建立非聚集索引Employee_name</p><pre><code>CREATE INDEX Employee_name ON Employee(EmplName)</code></pre><p>例：对SalesOrder中的商品号和订单号建立唯一聚集索引<br>CREATE UNION CLUSTERED INDEX IX_GoodsIDOrderID ON SalesOrder(GoodsID,OrderID)</p><h2 id="2-使用系统存储过程查看索引属性："><a href="#2-使用系统存储过程查看索引属性：" class="headerlink" title="2.使用系统存储过程查看索引属性："></a>2.使用系统存储过程查看索引属性：</h2><pre><code>EXE sp_helpindex Employee</code></pre><p>   其中Employee是需要查看索引的表名-</p><h2 id="3-修改索引"><a href="#3-修改索引" class="headerlink" title="3.修改索引"></a>3.修改索引</h2><p>REBUILD  重建索引<br>rebuild_index_option  重建索引选项<br>例：修改索引IX_DiscountTotal,将填充因子（FILLFACTOR）改为80</p><pre><code>ALTER INDEX IX_DiscountTotal ON OrderDetailREBUILD  WITH(PAD_INDEX=ON,FILLFACTOR=80)</code></pre><h2 id="4-删除索引"><a href="#4-删除索引" class="headerlink" title="4.删除索引"></a>4.删除索引</h2><p>例：删除已建索引IX_DiscountToal</p><pre><code>DROP INDEX OrderDetail.IX_DiscountToal6</code></pre><h1 id="二、视图"><a href="#二、视图" class="headerlink" title="二、视图"></a>二、视图</h1><h2 id="1-创建视图"><a href="#1-创建视图" class="headerlink" title="1.创建视图"></a>1.创建视图</h2><p>例：创建StoreSales数据库上的视图Emp_view，视图包含Employee表的全部列。</p><pre><code>CREATE VIEW Emp_viewASSELECT *FROM Employee</code></pre><h2 id="2-查询视图"><a href="#2-查询视图" class="headerlink" title="2.查询视图"></a>2.查询视图</h2><p>例：从视图Emp_view查询年龄大于40的员工的员工号、姓名和年龄。</p><pre><code>SELECT EmplID,EmplName,2020-year(Birthday)as '年龄'FROM Emp_viewWHERE EmplName=’刘强’</code></pre><h2 id="3-更新视图"><a href="#3-更新视图" class="headerlink" title="3.更新视图"></a>3.更新视图</h2><p>插入数据：<br>例：向视图Emp_view中插入一行数据“E007，张三，男，1996-3-6，5000，D002”</p><pre><code>INSERT INTO Emp_view VALUES('E007','张三','男','1996-3-6',' ','5000','D002')</code></pre><p>修改数据：<br>例：修改视图Emp_view，将员工张三的工资改为6000,部门号改为D001</p><pre><code>UPDATE Emp_view SET Wages='6000',DeptID='D001'WHERE EmplName='张三'</code></pre><p>例：删除视图Emp_view中张三这名员工的相关信息</p><pre><code>DELETE FROM Emp_viewWHERE EmplName='张三'</code></pre><h2 id="4-删除视图"><a href="#4-删除视图" class="headerlink" title="4.删除视图"></a>4.删除视图</h2><pre><code>DROP VIEW Emp_view </code></pre><pre><code>DROP VIEW EmpDep_view</code></pre><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      <categories>
+          
+          <category> 数据库笔记 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> sql server </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>SQL查询语句练习</title>
       <link href="posts/9b09.html"/>
       <url>posts/9b09.html</url>
