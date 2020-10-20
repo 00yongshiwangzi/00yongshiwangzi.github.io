@@ -6,7 +6,7 @@
   <link href="https://00yongshiwangzi.github.io/atom.xml" rel="self"/>
   
   <link href="https://00yongshiwangzi.github.io/"/>
-  <updated>2020-10-18T08:33:00.071Z</updated>
+  <updated>2020-10-20T12:16:29.138Z</updated>
   <id>https://00yongshiwangzi.github.io/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Python笔试练习题</title>
+    <link href="https://00yongshiwangzi.github.io/posts/43d8.html"/>
+    <id>https://00yongshiwangzi.github.io/posts/43d8.html</id>
+    <published>2020-10-20T12:21:59.892Z</published>
+    <updated>2020-10-20T12:16:29.138Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;今天写Python作业，发现有几个题不会，应该是因为最近上课没怎么听讲的事，于是把这几个题查一下，万一考试就出这些题了呢，毕竟python期末考试可能会是笔试。&lt;/p&gt;
+&lt;p&gt;1.表达式[1, 2, 3]*3的执行结果为: </summary>
+        
+      
+    
+    
+    
+    <category term="python" scheme="https://00yongshiwangzi.github.io/categories/python/"/>
+    
+    
+    <category term="python" scheme="https://00yongshiwangzi.github.io/tags/python/"/>
+    
+  </entry>
   
   <entry>
     <title>数据库索引与视图笔记</title>
