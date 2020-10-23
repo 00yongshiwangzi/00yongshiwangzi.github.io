@@ -6,7 +6,7 @@
   <link href="https://00yongshiwangzi.github.io/atom.xml" rel="self"/>
   
   <link href="https://00yongshiwangzi.github.io/"/>
-  <updated>2020-10-20T12:16:29.138Z</updated>
+  <updated>2020-10-23T08:26:45.759Z</updated>
   <id>https://00yongshiwangzi.github.io/</id>
   
   <author>
@@ -17,11 +17,37 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>数据库约束性条件笔记</title>
+    <link href="https://00yongshiwangzi.github.io/posts/6e53.html"/>
+    <id>https://00yongshiwangzi.github.io/posts/6e53.html</id>
+    <published>2020-10-23T08:24:11.178Z</published>
+    <updated>2020-10-23T08:26:45.759Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;1.自建数据库，在数据库中创建一个stu(sno,sname,ssex,sdept,sage)表，通过constraint关键词为列添加约束条件，其中：sno为主键，ssex 的取值男或女，sage取值范围(0-120)。&lt;/p&gt;
+&lt;pre class=&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="数据库笔记" scheme="https://00yongshiwangzi.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="sql server" scheme="https://00yongshiwangzi.github.io/tags/sql-server/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Python笔试练习题</title>
     <link href="https://00yongshiwangzi.github.io/posts/43d8.html"/>
     <id>https://00yongshiwangzi.github.io/posts/43d8.html</id>
     <published>2020-10-20T12:21:59.892Z</published>
-    <updated>2020-10-20T12:16:29.138Z</updated>
+    <updated>2020-10-20T12:22:33.446Z</updated>
     
     
       
