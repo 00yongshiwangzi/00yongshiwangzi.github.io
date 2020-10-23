@@ -463,7 +463,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-10-18
+                    2020-10-23
                 </div>
                 
 
@@ -494,33 +494,33 @@
             <div id="articleContent">
                 <h1 id="一、索引"><a href="#一、索引" class="headerlink" title="一、索引"></a>一、索引</h1><p>INDEX   索引（默认为非唯一非聚集）<br>UNION  INDEX  唯一索引<br>CLUSTERED INDEX 聚集索引</p>
 <h2 id="1-创建索引："><a href="#1-创建索引：" class="headerlink" title="1.创建索引："></a>1.创建索引：</h2><p>例：对Employee中的姓名列建立非聚集索引Employee_name</p>
-<pre><code>CREATE INDEX Employee_name ON Employee(EmplName)</code></pre>
+<pre class=" language-sql"><code class="language-sql"><span class="token keyword">CREATE</span> <span class="token keyword">INDEX</span> Employee_name <span class="token keyword">ON</span> Employee<span class="token punctuation">(</span>EmplName<span class="token punctuation">)</span></code></pre>
 <p>例：对SalesOrder中的商品号和订单号建立唯一聚集索引<br>CREATE UNION CLUSTERED INDEX IX_GoodsIDOrderID ON SalesOrder(GoodsID,OrderID)</p>
-<h2 id="2-使用系统存储过程查看索引属性："><a href="#2-使用系统存储过程查看索引属性：" class="headerlink" title="2.使用系统存储过程查看索引属性："></a>2.使用系统存储过程查看索引属性：</h2><pre><code>EXE sp_helpindex Employee</code></pre>
+<h2 id="2-使用系统存储过程查看索引属性："><a href="#2-使用系统存储过程查看索引属性：" class="headerlink" title="2.使用系统存储过程查看索引属性："></a>2.使用系统存储过程查看索引属性：</h2><pre class=" language-sql"><code class="language-sql">EXE sp_helpindex Employee</code></pre>
 <p>   其中Employee是需要查看索引的表名-</p>
 <h2 id="3-修改索引"><a href="#3-修改索引" class="headerlink" title="3.修改索引"></a>3.修改索引</h2><p>REBUILD  重建索引<br>rebuild_index_option  重建索引选项<br>例：修改索引IX_DiscountTotal,将填充因子（FILLFACTOR）改为80</p>
-<pre><code>ALTER INDEX IX_DiscountTotal ON OrderDetail
-REBUILD  WITH(PAD_INDEX=ON,FILLFACTOR=80)</code></pre>
+<pre class=" language-sql"><code class="language-sql"><span class="token keyword">ALTER</span> <span class="token keyword">INDEX</span> IX_DiscountTotal <span class="token keyword">ON</span> OrderDetail
+REBUILD  <span class="token keyword">WITH</span><span class="token punctuation">(</span>PAD_INDEX<span class="token operator">=</span><span class="token keyword">ON</span><span class="token punctuation">,</span><span class="token keyword">FILLFACTOR</span><span class="token operator">=</span><span class="token number">80</span><span class="token punctuation">)</span></code></pre>
 <h2 id="4-删除索引"><a href="#4-删除索引" class="headerlink" title="4.删除索引"></a>4.删除索引</h2><p>例：删除已建索引IX_DiscountToal</p>
-<pre><code>DROP INDEX OrderDetail.IX_DiscountToal6</code></pre>
+<pre class=" language-sql"><code class="language-sql"><span class="token keyword">DROP</span> <span class="token keyword">INDEX</span> OrderDetail<span class="token punctuation">.</span>IX_DiscountToal6</code></pre>
 <h1 id="二、视图"><a href="#二、视图" class="headerlink" title="二、视图"></a>二、视图</h1><h2 id="1-创建视图"><a href="#1-创建视图" class="headerlink" title="1.创建视图"></a>1.创建视图</h2><p>例：创建StoreSales数据库上的视图Emp_view，视图包含Employee表的全部列。</p>
-<pre><code>CREATE VIEW Emp_view
-AS
-SELECT *FROM Employee</code></pre>
+<pre class=" language-sql"><code class="language-sql"><span class="token keyword">CREATE</span> <span class="token keyword">VIEW</span> Emp_view
+<span class="token keyword">AS</span>
+<span class="token keyword">SELECT</span> <span class="token operator">*</span><span class="token keyword">FROM</span> Employee</code></pre>
 <h2 id="2-查询视图"><a href="#2-查询视图" class="headerlink" title="2.查询视图"></a>2.查询视图</h2><p>例：从视图Emp_view查询年龄大于40的员工的员工号、姓名和年龄。</p>
-<pre><code>SELECT EmplID,EmplName,2020-year(Birthday)as '年龄'
-FROM Emp_view
-WHERE EmplName=’刘强’</code></pre>
+<pre class=" language-sql"><code class="language-sql"><span class="token keyword">SELECT</span> EmplID<span class="token punctuation">,</span>EmplName<span class="token punctuation">,</span><span class="token number">2020</span><span class="token operator">-</span>year<span class="token punctuation">(</span>Birthday<span class="token punctuation">)</span><span class="token keyword">as</span> <span class="token string">'年龄'</span>
+<span class="token keyword">FROM</span> Emp_view
+<span class="token keyword">WHERE</span> EmplName<span class="token operator">=</span>’刘强’</code></pre>
 <h2 id="3-更新视图"><a href="#3-更新视图" class="headerlink" title="3.更新视图"></a>3.更新视图</h2><p>插入数据：<br>例：向视图Emp_view中插入一行数据“E007，张三，男，1996-3-6，5000，D002”</p>
-<pre><code>INSERT INTO Emp_view VALUES('E007','张三','男','1996-3-6',' ','5000','D002')</code></pre>
+<pre class=" language-sql"><code class="language-sql"><span class="token keyword">INSERT</span> <span class="token keyword">INTO</span> Emp_view <span class="token keyword">VALUES</span><span class="token punctuation">(</span><span class="token string">'E007'</span><span class="token punctuation">,</span><span class="token string">'张三'</span><span class="token punctuation">,</span><span class="token string">'男'</span><span class="token punctuation">,</span><span class="token string">'1996-3-6'</span><span class="token punctuation">,</span><span class="token string">' '</span><span class="token punctuation">,</span><span class="token string">'5000'</span><span class="token punctuation">,</span><span class="token string">'D002'</span><span class="token punctuation">)</span></code></pre>
 <p>修改数据：<br>例：修改视图Emp_view，将员工张三的工资改为6000,部门号改为D001</p>
-<pre><code>UPDATE Emp_view SET Wages='6000',DeptID='D001'
-WHERE EmplName='张三'</code></pre>
+<pre class=" language-sql"><code class="language-sql"><span class="token keyword">UPDATE</span> Emp_view <span class="token keyword">SET</span> Wages<span class="token operator">=</span><span class="token string">'6000'</span><span class="token punctuation">,</span>DeptID<span class="token operator">=</span><span class="token string">'D001'</span>
+<span class="token keyword">WHERE</span> EmplName<span class="token operator">=</span><span class="token string">'张三'</span></code></pre>
 <p>例：删除视图Emp_view中张三这名员工的相关信息</p>
-<pre><code>DELETE FROM Emp_view
-WHERE EmplName='张三'</code></pre>
-<h2 id="4-删除视图"><a href="#4-删除视图" class="headerlink" title="4.删除视图"></a>4.删除视图</h2><pre><code>DROP VIEW Emp_view </code></pre>
-<pre><code>DROP VIEW EmpDep_view</code></pre>
+<pre class=" language-sql"><code class="language-sql"><span class="token keyword">DELETE</span> <span class="token keyword">FROM</span> Emp_view
+<span class="token keyword">WHERE</span> EmplName<span class="token operator">=</span><span class="token string">'张三'</span></code></pre>
+<h2 id="4-删除视图"><a href="#4-删除视图" class="headerlink" title="4.删除视图"></a>4.删除视图</h2><pre class=" language-sql"><code class="language-sql"><span class="token keyword">DROP</span> <span class="token keyword">VIEW</span> Emp_view </code></pre>
+<pre class=" language-sql"><code class="language-sql"><span class="token keyword">DROP</span> <span class="token keyword">VIEW</span> EmpDep_view</code></pre>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -1091,7 +1091,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">10.1k</span>&nbsp;字
+                class="white-color">10.2k</span>&nbsp;字
             
             
             
