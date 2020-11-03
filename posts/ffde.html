@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="XSS学习笔记, 00yongshiwangzi">
+    <meta name="keywords" content="数据库程序设计与数据库编程技术练习题, 00yongshiwangzi">
     <meta name="description" content="努力的话，天才也可以超越！">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>XSS学习笔记 | Cy_Dragon Blog</title>
+    <title>数据库程序设计与数据库编程技术练习题 | Cy_Dragon Blog</title>
     <link rel="icon" type="image/jpeg" href="/logo.jpg">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -309,12 +309,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/00yongshiwangzi/00yongshiwangzi.github.io/medias/featureimages/2.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/00yongshiwangzi/00yongshiwangzi.github.io/medias/featureimages/15.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">XSS学习笔记</h1>
+                    <h1 class="description center-align post-title">数据库程序设计与数据库编程技术练习题</h1>
                 </div>
             </div>
         </div>
@@ -431,8 +431,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Web-CTF/">
-                                <span class="chip bg-color">Web,CTF</span>
+                            <a href="/tags/sql-server/">
+                                <span class="chip bg-color">sql server</span>
                             </a>
                         
                     </div>
@@ -443,8 +443,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/CTF%E7%AC%94%E8%AE%B0/" class="post-category">
-                                CTF笔记
+                            <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AC%94%E8%AE%B0/" class="post-category">
+                                数据库笔记
                             </a>
                         
                     </div>
@@ -456,28 +456,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-09-30
+                    2020-11-03
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-10-01
+                    2020-11-03
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.1k
+                    794
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    4 分
+                    3 分
                 </div>
                 
 
@@ -492,13 +492,112 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="XSS-跨站脚本攻击"><a href="#XSS-跨站脚本攻击" class="headerlink" title="XSS : 跨站脚本攻击"></a>XSS : 跨站脚本攻击</h1><p><strong>将恶意的js代码进行注入<br>注入点的两个要求：<br>1.输入的东西可以在页面上显示.<br>2.一个可以自行控制的参数位置<br>GET,POST,COOKIE 如用户名输入框，留言板等</strong></p>
-<h2 id="1-反射型XSS："><a href="#1-反射型XSS：" class="headerlink" title="1.反射型XSS："></a>1.反射型XSS：</h2><p><strong>即输即用，插入一次而没有进入服务器的存储结构中<br>?wd后为传输搜索选项的内容，可以进行插入恶意代码<br>这样的payload较长，可能带有敏感字符如&lt; script&gt;标签等，<br>容易失败，所以可以利用网上一些缩短url工具进行欺骗</strong></p>
-<h2 id="2-存储型XSS："><a href="#2-存储型XSS：" class="headerlink" title="2.存储型XSS："></a>2.存储型XSS：</h2><p><strong>一劳永逸 向网页插入的代码会被网站添加到服务器的存储结构中<br>持久性的跨站脚本，更具威胁性<br>一般用来网站渗透、挂马、蠕虫病毒、钓鱼流量导流等<br>只要在HTML中加入&lt; script&gt;标签即可让浏览器执行我们需要的js脚本<br>  Javascript脚本语言：一种直译式脚本语言<br>广泛用于客户端   用来给HTML网页增加动态功能<br>很容易被客户端修改，可以控制浏览器做各种动作例如弹窗、重定向、刷新等</strong></p>
-<h1 id="XSS检测："><a href="#XSS检测：" class="headerlink" title="XSS检测："></a>XSS检测：</h1><p><strong>XSS攻击通常需要获取网站用户的登录信息，如登录账号密码或者登录凭证<br>通常渗透测试中我们将测试代码浓缩为：<br>&lt; script&gt;alert(1)&lt; /script&gt;构造网页弹窗<br>这个payload中包含了几乎所有XSS利用的前提条件<br>–可以插入&lt; script&gt;标签、包含js代码的函数alert,<br>如果浏览器弹窗，说明可能存在XSS注入</strong></p>
-<h1 id="XSS构造"><a href="#XSS构造" class="headerlink" title="XSS构造"></a>XSS构造</h1><p><strong>利用XSS漏洞，攻击者可以进行两种攻击：钓鱼和盗取Cookie<br>钓鱼步骤：<br>1.根据原始网页构造一个克隆页面<br>2.通过XSS将克隆页面导入网站后台<br>3.用户被骗后输入信息，如用户名密码<br>4.收集到信息后，我们将用户的用户名密码导入到钓鱼接受平台中<br>盗取Cookie利用原理和钓鱼相同，我们接受到用户cookie后就能够伪造身份登录后台了<br>留言板框的标签为&lt; textarea&gt;，为了屏蔽这个标签，我们使前后&lt; textarea&gt;闭合<br>如在留言板里输入&lt; /textarea&gt;&lt; script ……&gt;&lt; /script&gt;&lt; textarea&gt;</strong></p>
-<h1 id="XSS防御"><a href="#XSS防御" class="headerlink" title="XSS防御"></a>XSS防御</h1><p><strong>HttpOnly属性：让我们的cookie只能被http控制而不能被js控制<br>XSS绕过<br>第一种思路：不同的标签<br>主要思想为<br>           1.这个标签可以写入连接导致跳转或者包含其他页面，如&lt; img&gt;<br>            2.这个标签中可以添加事件而执行js，例如&lt; input&gt;<br>&lt; img src=”javascript:alert(‘xss’)”&gt;可以使用js的伪协议去执行xss代码，<br>当然也可以在img中导入一个外网带有xss代码链接，但是也不是所有的web浏览器都支持伪协议<br>第二种思路：产生自己的事件<br>js本来就是一种动态脚本语言<br>如果我们的输入在input标签中，后者能够自己写入一个input标签，<br>就可以构建自己的事件如onclick(点击鼠标)，onmouseover(鼠标移动)，onkeydown(敲击键盘)等响应事件<br>可以利用的事件一般分为3类：<br>1.用户接口IO（鼠标，键盘）<br>2.逻辑（处理的结果）<br>3.变化（对文档的修改）</strong></p>
-<h2 id="编码绕过、常用编码："><a href="#编码绕过、常用编码：" class="headerlink" title="编码绕过、常用编码："></a>编码绕过、常用编码：</h2><p><strong>URL编码：通过%和ascii码编码但是要确认服务器会对我们的输入解码，否则起到反作用<br>HTML实体编码：命名实体：以&amp;开头，分号结尾的，例如“&lt;”编码为“&amp;lt”<br>字符编码：十进制、十六进制ASCII码或unicode字符编码，样式为“&amp;#数值”，<br>                例如“&lt;”可以编码为“&lt;”和“&lt;”<br>js编码:四种编码形式，例如“e”为”\145”或”\x65”或”\u0065”<br>css编码：用一个反斜线()后面跟1~6位的十六进制数字，例如e可以编码为“\65”或”65”或”00065”<br>理解XSS编码顺序：在什么位置应该被谁理解</strong></p>
+                <h2 id="数据库程序设计与数据库编程技术练习题"><a href="#数据库程序设计与数据库编程技术练习题" class="headerlink" title="数据库程序设计与数据库编程技术练习题"></a>数据库程序设计与数据库编程技术练习题</h2><p>1、    用IF….ELSE语句实现下面功能：在员工表中，如果存在工资大于等于4000的员工，<br>–则输出该员工的员工号、员工名、工资、部门号和部门名。否则输出没有满足条件的员工。</p>
+<pre class=" language-sql"><code class="language-sql"><span class="token keyword">if</span> <span class="token keyword">exists</span><span class="token punctuation">(</span><span class="token keyword">select</span> <span class="token operator">*</span> <span class="token keyword">from</span> Employee <span class="token keyword">where</span> Wages<span class="token operator">>=</span><span class="token number">4000</span><span class="token punctuation">)</span>
+<span class="token keyword">select</span> EmplID<span class="token punctuation">,</span>EmplName<span class="token punctuation">,</span>Wages<span class="token punctuation">,</span>Department<span class="token punctuation">.</span>DeptID<span class="token punctuation">,</span> DeptName 
+<span class="token keyword">from</span> Employee <span class="token punctuation">,</span>Department
+<span class="token keyword">where</span> Employee<span class="token punctuation">.</span>DeptID<span class="token operator">=</span>Department<span class="token punctuation">.</span>DeptID <span class="token operator">and</span> Wages<span class="token operator">>=</span><span class="token number">4000</span>
+<span class="token keyword">else</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'没有满足条件的员工!'</span><span class="token punctuation">)</span></code></pre>
+<p>2、    用while语句实现下面功能：计算1+2+3+4的值。</p>
+<pre class=" language-sql"><code class="language-sql"><span class="token keyword">declare</span> <span class="token variable">@a</span> <span class="token keyword">int</span><span class="token punctuation">,</span><span class="token variable">@sum</span> <span class="token keyword">int</span>
+<span class="token keyword">set</span> <span class="token variable">@a</span><span class="token operator">=</span><span class="token number">1</span>
+<span class="token keyword">set</span> <span class="token variable">@sum</span><span class="token operator">=</span><span class="token number">0</span>
+<span class="token keyword">while</span><span class="token punctuation">(</span><span class="token variable">@a</span><span class="token operator">&lt;=</span><span class="token number">4</span><span class="token punctuation">)</span>
+<span class="token keyword">begin</span>
+<span class="token keyword">set</span> <span class="token variable">@sum</span><span class="token operator">=</span><span class="token variable">@sum</span><span class="token operator">+</span><span class="token variable">@a</span>
+<span class="token keyword">set</span> <span class="token variable">@a</span><span class="token operator">=</span><span class="token variable">@a</span><span class="token operator">+</span><span class="token number">1</span>
+<span class="token keyword">end</span>
+<span class="token keyword">print</span> <span class="token variable">@sum</span></code></pre>
+<p>3.查询Employee中所有员工的员工号，姓名，年龄。</p>
+<pre class=" language-sql"><code class="language-sql"><span class="token keyword">select</span> EmplID<span class="token punctuation">,</span>EmplName<span class="token punctuation">,</span>year<span class="token punctuation">(</span>GETDATE<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token operator">-</span>YEAR<span class="token punctuation">(</span>Birthday<span class="token punctuation">)</span><span class="token keyword">as</span> <span class="token string">'年龄'</span> 
+<span class="token keyword">from</span> Employee</code></pre>
+<p>4.输出字符串“abc”中每一个字符对应的ASCII值。</p>
+<pre class=" language-sql"><code class="language-sql"><span class="token keyword">declare</span> <span class="token variable">@i</span> <span class="token keyword">int</span>
+<span class="token keyword">set</span> <span class="token variable">@i</span><span class="token operator">=</span><span class="token number">1</span>
+<span class="token keyword">while</span><span class="token punctuation">(</span><span class="token variable">@i</span><span class="token operator">&lt;=</span><span class="token function">len</span><span class="token punctuation">(</span><span class="token string">'abc'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">begin</span>
+<span class="token keyword">print</span> ascii<span class="token punctuation">(</span>SUBSTRING<span class="token punctuation">(</span><span class="token string">'abc'</span><span class="token punctuation">,</span><span class="token variable">@i</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">set</span> <span class="token variable">@i</span><span class="token operator">=</span><span class="token variable">@i</span><span class="token operator">+</span><span class="token number">1</span>
+<span class="token keyword">end</span></code></pre>
+<p>5.创建一个带两个参数的存储过程，一个参数接受传递过来的员工号，<br>–一个参数返回该员工对应的工资。<br>–调用存储过程时，传递一个员工号，调用完成后能输出该员工的工资。</p>
+<pre class=" language-sql"><code class="language-sql"><span class="token keyword">create</span> <span class="token keyword">procedure</span> <span class="token number">abc</span> <span class="token variable">@a</span> char<span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token variable">@b</span> money output
+<span class="token keyword">as</span>
+<span class="token keyword">begin</span>
+<span class="token keyword">set</span> <span class="token variable">@b</span><span class="token operator">=</span><span class="token punctuation">(</span><span class="token keyword">select</span> Wages <span class="token keyword">from</span> dbo<span class="token punctuation">.</span>Employee <span class="token keyword">where</span> EmplID<span class="token operator">=</span><span class="token variable">@a</span><span class="token punctuation">)</span>
+<span class="token keyword">end</span></code></pre>
+<p>调用存储过程：</p>
+<pre class=" language-sql"><code class="language-sql"><span class="token keyword">declare</span> <span class="token variable">@b</span> money
+<span class="token keyword">exec</span>  <span class="token number">abc</span> <span class="token string">'E001'</span><span class="token punctuation">,</span><span class="token variable">@b</span> output
+<span class="token keyword">print</span> <span class="token variable">@b</span></code></pre>
+<p>用一种参数的写法：</p>
+<pre class=" language-sql"><code class="language-sql"><span class="token keyword">create</span> <span class="token keyword">procedure</span> <span class="token number">abc1</span> <span class="token variable">@a</span> char<span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">)</span>
+<span class="token keyword">as</span>
+<span class="token keyword">begin</span>
+<span class="token punctuation">(</span><span class="token keyword">select</span> Wages <span class="token keyword">from</span> dbo<span class="token punctuation">.</span>Employee <span class="token keyword">where</span> EmplID<span class="token operator">=</span><span class="token variable">@a</span><span class="token punctuation">)</span>
+<span class="token keyword">end</span>
+
+<span class="token keyword">exec</span>  <span class="token number">abc1</span> <span class="token string">'E001'</span><span class="token comment" spellcheck="true">#调用</span></code></pre>
+<p>6.修改第1题存储过程，用来完成根据员工号计算输出年龄。</p>
+<pre class=" language-sql"><code class="language-sql"><span class="token keyword">alter</span>  <span class="token keyword">procedure</span> <span class="token number">abc</span> <span class="token variable">@a</span> char<span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">)</span>
+<span class="token keyword">as</span>
+<span class="token keyword">begin</span>
+<span class="token punctuation">(</span><span class="token keyword">select</span> <span class="token number">2020</span><span class="token operator">-</span>year<span class="token punctuation">(</span>Birthday<span class="token punctuation">)</span> <span class="token keyword">from</span> dbo<span class="token punctuation">.</span>Employee <span class="token keyword">where</span> EmplID<span class="token operator">=</span><span class="token variable">@a</span><span class="token punctuation">)</span>
+<span class="token keyword">end</span></code></pre>
+<p>7.删除第1题的存储过程。</p>
+<pre class=" language-sql"><code class="language-sql"><span class="token keyword">drop</span> <span class="token keyword">procedure</span> <span class="token number">abc</span></code></pre>
+<p>8.在StoreSales 数据库的Employee表上创建一个INSERT触发器T_Ins，向Employee表插入数据时，<br>–如果员工号已存在，则禁止插入,并回滚到插入操作前。</p>
+<pre class=" language-sql"><code class="language-sql"><span class="token keyword">CREATE</span> <span class="token keyword">TRIGGER</span> T_Ins                <span class="token comment" spellcheck="true">/* 创建INSERT触发器T_Ins */</span>
+  <span class="token keyword">ON</span> Employee
+<span class="token keyword">AFTER</span> <span class="token keyword">INSERT</span>
+<span class="token keyword">AS</span>
+<span class="token keyword">BEGIN</span>
+  <span class="token keyword">DECLARE</span> <span class="token variable">@ID</span> char<span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">)</span> 
+<span class="token keyword">SELECT</span> <span class="token variable">@ID</span><span class="token operator">=</span>EmplID <span class="token keyword">FROM</span> inserted
+  <span class="token keyword">IF</span> <span class="token keyword">EXISTS</span><span class="token punctuation">(</span><span class="token keyword">SELECT</span> EmplID <span class="token keyword">FROM</span> Employee <span class="token keyword">WHERE</span> EmplID<span class="token operator">=</span><span class="token variable">@ID</span><span class="token punctuation">)</span>
+    <span class="token keyword">BEGIN</span> 
+      <span class="token keyword">PRINT</span> <span class="token string">'该员工号已存在,禁止插入'</span>
+      <span class="token keyword">ROLLBACK</span> <span class="token keyword">TRANSACTION</span>      <span class="token comment" spellcheck="true">/* 回滚到插入操作之前的状态 */</span>
+    <span class="token keyword">END</span> 
+<span class="token keyword">END</span>
+
+<span class="token keyword">INSERT</span> <span class="token keyword">INTO</span> Employee <span class="token keyword">VALUES</span><span class="token punctuation">(</span><span class="token string">'E006'</span><span class="token punctuation">,</span><span class="token string">'李11'</span><span class="token punctuation">,</span><span class="token string">'男'</span><span class="token punctuation">,</span><span class="token string">'1995-04-26'</span><span class="token punctuation">,</span><span class="token boolean">NULL</span> <span class="token punctuation">,</span><span class="token number">3000</span><span class="token punctuation">,</span><span class="token string">'D001'</span><span class="token punctuation">)</span>
+
+<span class="token keyword">select</span> <span class="token operator">*</span> <span class="token keyword">from</span> Employee
+
+<span class="token keyword">delete</span> <span class="token keyword">from</span> Employee
+<span class="token keyword">where</span> EmplID<span class="token operator">=</span><span class="token string">'E006'</span></code></pre>
+<p>9.在StoreSales 数据库的Employee表上创建一个UPDATE触发器T_Upd，<br>–防止用户修改Employee表的员工号。</p>
+<pre class=" language-sql"><code class="language-sql"><span class="token keyword">CREATE</span> <span class="token keyword">TRIGGER</span> T_Upd            <span class="token comment" spellcheck="true">/* 创建UPDATE触发器T_Upd */</span>
+  <span class="token keyword">ON</span> Employee
+<span class="token keyword">AFTER</span> <span class="token keyword">UPDATE</span>
+<span class="token keyword">AS</span>
+<span class="token keyword">IF</span> <span class="token keyword">UPDATE</span><span class="token punctuation">(</span>EmplID<span class="token punctuation">)</span>
+   <span class="token keyword">BEGIN</span> 
+     <span class="token keyword">PRINT</span> <span class="token string">'不能修改员工号'</span>
+     <span class="token keyword">ROLLBACK</span> <span class="token keyword">TRANSACTION</span>      <span class="token comment" spellcheck="true">/* 回滚到修改操作之前的状态 */</span>
+   <span class="token keyword">END</span> 
+GO
+
+<span class="token keyword">update</span> dbo<span class="token punctuation">.</span>Employee
+<span class="token keyword">set</span> EmplID<span class="token operator">=</span><span class="token string">'E008'</span>
+<span class="token keyword">where</span> EmplName<span class="token operator">=</span><span class="token string">'刘强'</span></code></pre>
+<p>10.在StoreSales 数据库的Employee表上创建一个DELETE触发器T_Del，<br>–防止用户删除Employee表的记录。</p>
+<pre class=" language-sql"><code class="language-sql"><span class="token keyword">CREATE</span> <span class="token keyword">TRIGGER</span> T_Del                 <span class="token comment" spellcheck="true">/* 创建DELETE触发器T_Del */</span>
+  <span class="token keyword">ON</span> Employee
+<span class="token keyword">AFTER</span> <span class="token keyword">DELETE</span>
+<span class="token keyword">AS</span>
+  <span class="token keyword">IF</span> <span class="token keyword">EXISTS</span><span class="token punctuation">(</span><span class="token keyword">SELECT</span> <span class="token operator">*</span> <span class="token keyword">FROM</span> deleted <span class="token punctuation">)</span>
+    <span class="token keyword">BEGIN</span>   
+      <span class="token keyword">PRINT</span> <span class="token string">'不能删除Employee表的记录'</span>
+      <span class="token keyword">ROLLBACK</span> <span class="token keyword">TRANSACTION</span>          <span class="token comment" spellcheck="true">/* 回滚到删除操作之前的状态 */</span>
+    <span class="token keyword">END</span> 
+GO
+
+<span class="token keyword">delete</span> <span class="token keyword">from</span> Employee
+<span class="token keyword">where</span>  EmplName<span class="token operator">=</span><span class="token string">'刘强'</span></code></pre>
+<p>11.删除触发器T_Ins、T_Upd和T_Del </p>
+<pre class=" language-sql"><code class="language-sql"><span class="token keyword">drop</span> <span class="token keyword">trigger</span> T_Ins<span class="token punctuation">,</span>T_Upd<span class="token punctuation">,</span>T_Del</code></pre>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -542,7 +641,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://00yongshiwangzi.github.io/posts/3459.html">https://00yongshiwangzi.github.io/posts/3459.html</a>
+                    <a href="https://00yongshiwangzi.github.io/posts/ffde.html">https://00yongshiwangzi.github.io/posts/ffde.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -580,8 +679,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Web-CTF/">
-                                    <span class="chip bg-color">Web,CTF</span>
+                                <a href="/tags/sql-server/">
+                                    <span class="chip bg-color">sql server</span>
                                 </a>
                             
                         </div>
@@ -752,7 +851,7 @@
         repo: 'gitalk',
         owner: '00yongshiwangzi',
         admin: "00yongshiwangzi",
-        id: '2020-09-30T18-42-57',
+        id: '2020-11-03T20-41-19',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -776,16 +875,17 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/posts/6721.html">
+                <a href="/posts/ffde.html">
                     <div class="card-image">
                         
-                        <img src="https://cdn.jsdelivr.net/gh/00yongshiwangzi/00yongshiwangzi.github.io/medias/featureimages/8.jpg" class="responsive-img" alt="SQL注入">
+                        <img src="https://cdn.jsdelivr.net/gh/00yongshiwangzi/00yongshiwangzi.github.io/medias/featureimages/15.jpg" class="responsive-img" alt="数据库程序设计与数据库编程技术练习题">
                         
-                        <span class="card-title">SQL注入</span>
+                        <span class="card-title">数据库程序设计与数据库编程技术练习题</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -795,26 +895,27 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-10-01
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-11-03
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/CTF%E7%AC%94%E8%AE%B0/" class="post-category">
-                                    CTF笔记
+                            <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AC%94%E8%AE%B0/" class="post-category">
+                                    数据库笔记
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Web-CTF/">
-                        <span class="chip bg-color">Web,CTF</span>
+                    <a href="/tags/sql-server/">
+                        <span class="chip bg-color">sql server</span>
                     </a>
                     
                 </div>
@@ -828,12 +929,12 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/57a7.html">
+                <a href="/posts/4337.html">
                     <div class="card-image">
                         
-                        <img src="https://cdn.jsdelivr.net/gh/00yongshiwangzi/00yongshiwangzi.github.io/medias/featureimages/1.jpg" class="responsive-img" alt="sql-labs">
+                        <img src="https://cdn.jsdelivr.net/gh/00yongshiwangzi/00yongshiwangzi.github.io/medias/featureimages/14.jpg" class="responsive-img" alt="数据完整性及数据库程序设计练习题">
                         
-                        <span class="card-title">sql-labs</span>
+                        <span class="card-title">数据完整性及数据库程序设计练习题</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -844,14 +945,14 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-09-30
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-11-03
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/CTF%E9%A2%98/" class="post-category">
-                                    CTF题
+                            <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AC%94%E8%AE%B0/" class="post-category">
+                                    数据库笔记
                                 </a>
                             
                             
@@ -861,8 +962,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Web-CTF/">
-                        <span class="chip bg-color">Web,CTF</span>
+                    <a href="/tags/sql-server/">
+                        <span class="chip bg-color">sql server</span>
                     </a>
                     
                 </div>

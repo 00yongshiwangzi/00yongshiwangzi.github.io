@@ -6,7 +6,7 @@
   <link href="https://00yongshiwangzi.github.io/atom.xml" rel="self"/>
   
   <link href="https://00yongshiwangzi.github.io/"/>
-  <updated>2020-11-03T11:28:56.893Z</updated>
+  <updated>2020-11-03T12:41:03.226Z</updated>
   <id>https://00yongshiwangzi.github.io/</id>
   
   <author>
@@ -17,11 +17,36 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>数据库程序设计与数据库编程技术练习题</title>
+    <link href="https://00yongshiwangzi.github.io/posts/ffde.html"/>
+    <id>https://00yongshiwangzi.github.io/posts/ffde.html</id>
+    <published>2020-11-03T12:41:19.072Z</published>
+    <updated>2020-11-03T12:41:03.226Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;数据库程序设计与数据库编程技术练习题&quot;&gt;&lt;a href=&quot;#数据库程序设计与数据库编程技术练习题&quot; class=&quot;headerlink&quot; title=&quot;数据库程序设计与数据库编程技术练习题&quot;&gt;&lt;/a&gt;数据库程序设计与数据库编程技术练习题&lt;/h2&gt;&lt;p&gt;1、   </summary>
+        
+      
+    
+    
+    
+    <category term="数据库笔记" scheme="https://00yongshiwangzi.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="sql server" scheme="https://00yongshiwangzi.github.io/tags/sql-server/"/>
+    
+  </entry>
+  
+  <entry>
     <title>数据完整性及数据库程序设计练习题</title>
     <link href="https://00yongshiwangzi.github.io/posts/4337.html"/>
     <id>https://00yongshiwangzi.github.io/posts/4337.html</id>
     <published>2020-11-03T11:18:52.280Z</published>
-    <updated>2020-11-03T11:28:56.893Z</updated>
+    <updated>2020-11-03T11:29:29.118Z</updated>
     
     
       
