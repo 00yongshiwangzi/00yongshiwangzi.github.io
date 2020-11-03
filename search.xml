@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>数据完整性及数据库程序设计练习题</title>
+      <link href="posts/4337.html"/>
+      <url>posts/4337.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="数据完整性及数据库程序设计"><a href="#数据完整性及数据库程序设计" class="headerlink" title="数据完整性及数据库程序设计"></a>数据完整性及数据库程序设计</h2><p>1.自建数据库，在数据库中创建一个stu(sno,sname,ssex,sdept,sage)表，通过constraint关键词为列添加约束条件，其中：sno为主键，ssex 的取值男或女，sage取值范围(0-120)。<br><img src="https://img-blog.csdnimg.cn/20201103190340643.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1ODEzOTgw,size_16,color_FFFFFF,t_70#pic_center"><br>2.修改表stu,通过constraint为stu的sname列增加一个唯一性约束条件,为stu的sdept列增加默认值为“计算机”约束条件。<br> <img src="https://img-blog.csdnimg.cn/2020110319030676.png#pic_center"><br>3.将stu表中sage列的约束条件改为(0-150)。<br><img src="https://img-blog.csdnimg.cn/20201103190445683.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1ODEzOTgw,size_16,color_FFFFFF,t_70#pic_center"></p><p>4.在数据库中创建一个表score(sno,cno,score)，要求：(sno,cno)为主键，sno为外键，同时满足当主表stu中sno中的值修改或者删除时，从表score中的sno值也做相应的修改或者删除，score取值范围(0–100)。<br> <img src="https://img-blog.csdnimg.cn/20201103190506575.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1ODEzOTgw,size_16,color_FFFFFF,t_70#pic_center"><br>5.在自建数据库中创建一个表student（学号，姓名，性别），其中学号数据类型为用户自定义数据类型Sno_type。<br><img src="https://img-blog.csdnimg.cn/20201103190542355.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1ODEzOTgw,size_16,color_FFFFFF,t_70#pic_center"></p><p>6.定义一个局部变量，并通过该变量获取student表中学号为201901学生的姓名并输出。<br> <img src="https://img-blog.csdnimg.cn/20201103190608603.png#pic_center"><br>7.定义两个局部变量var1和var2，给两个变量赋值同时用PRINT输出加法运算之后的结果。<br> <img src="https://img-blog.csdnimg.cn/20201103190633862.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1ODEzOTgw,size_16,color_FFFFFF,t_70#pic_center"><br>8.定义两个局部变量var3和var4，给两个变量赋值同时用PRINT输出连接运算之后的结果。</p><p><img src="https://img-blog.csdnimg.cn/2020110319070155.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1ODEzOTgw,size_16,color_FFFFFF,t_70#pic_center"><br>9.从stu表中查询年龄比张三同学大的学生的学号、姓名和年龄。<br> <img src="https://img-blog.csdnimg.cn/20201103190724265.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1ODEzOTgw,size_16,color_FFFFFF,t_70#pic_center"><br>10.从student表中查询姓名以王开头，并且包含2个字符的学生的信息。</p><p><img src="https://img-blog.csdnimg.cn/20201103190741411.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1ODEzOTgw,size_16,color_FFFFFF,t_70#pic_center"></p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      <categories>
+          
+          <category> 数据库笔记 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> sql server </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>数据库约束性条件笔记</title>
       <link href="posts/6e53.html"/>
       <url>posts/6e53.html</url>

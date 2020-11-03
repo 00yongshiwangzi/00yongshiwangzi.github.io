@@ -6,7 +6,7 @@
   <link href="https://00yongshiwangzi.github.io/atom.xml" rel="self"/>
   
   <link href="https://00yongshiwangzi.github.io/"/>
-  <updated>2020-10-23T08:27:38.273Z</updated>
+  <updated>2020-11-03T11:28:56.893Z</updated>
   <id>https://00yongshiwangzi.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>数据完整性及数据库程序设计练习题</title>
+    <link href="https://00yongshiwangzi.github.io/posts/4337.html"/>
+    <id>https://00yongshiwangzi.github.io/posts/4337.html</id>
+    <published>2020-11-03T11:18:52.280Z</published>
+    <updated>2020-11-03T11:28:56.893Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;数据完整性及数据库程序设计&quot;&gt;&lt;a href=&quot;#数据完整性及数据库程序设计&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="数据库笔记" scheme="https://00yongshiwangzi.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="sql server" scheme="https://00yongshiwangzi.github.io/tags/sql-server/"/>
+    
+  </entry>
   
   <entry>
     <title>数据库约束性条件笔记</title>
