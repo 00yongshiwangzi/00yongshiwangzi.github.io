@@ -6,7 +6,7 @@
   <link href="https://00yongshiwangzi.github.io/atom.xml" rel="self"/>
   
   <link href="https://00yongshiwangzi.github.io/"/>
-  <updated>2020-11-03T12:45:33.494Z</updated>
+  <updated>2020-11-08T11:55:05.011Z</updated>
   <id>https://00yongshiwangzi.github.io/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>数据库编程技术与事务练习题</title>
+    <link href="https://00yongshiwangzi.github.io/posts/d9f6.html"/>
+    <id>https://00yongshiwangzi.github.io/posts/d9f6.html</id>
+    <published>2020-11-08T11:55:23.105Z</published>
+    <updated>2020-11-08T11:55:05.011Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;##数据库编程技术与事务练习题&lt;/p&gt;
+&lt;p&gt;1、自定义一个函数实现下面功能：对于给定的一个员工号，查询该值在员工表中是否存在，如果存在返1，否则返回0。&lt;br&gt;通过调用上述函数判断某一个员工是否存在，如果存在，显示“该员工信息存在”，如果不存在，就显示“该员工信息不存在”</summary>
+        
+      
+    
+    
+    
+    <category term="数据库笔记" scheme="https://00yongshiwangzi.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="sql server" scheme="https://00yongshiwangzi.github.io/tags/sql-server/"/>
+    
+  </entry>
   
   <entry>
     <title>数据库程序设计与数据库编程技术练习题</title>
