@@ -6,7 +6,7 @@
   <link href="https://00yongshiwangzi.github.io/atom.xml" rel="self"/>
   
   <link href="https://00yongshiwangzi.github.io/"/>
-  <updated>2020-11-08T11:55:48.642Z</updated>
+  <updated>2020-11-12T10:15:16.482Z</updated>
   <id>https://00yongshiwangzi.github.io/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>sql server 总复习</title>
+    <link href="https://00yongshiwangzi.github.io/posts/cd1a.html"/>
+    <id>https://00yongshiwangzi.github.io/posts/cd1a.html</id>
+    <published>2020-11-12T10:15:38.554Z</published>
+    <updated>2020-11-12T10:15:16.482Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;写在前面：这学期的数据库sql server结课了，为了期末的考试，把老师讲的重点汇总一下，期末考个好成绩。内容有点多，分几次写吧。&lt;/p&gt;
+&lt;h1 id=&quot;第一章-数据库概述&quot;&gt;&lt;a href=&quot;#第一章-数据库概述&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="数据库笔记" scheme="https://00yongshiwangzi.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="sql server" scheme="https://00yongshiwangzi.github.io/tags/sql-server/"/>
+    
+  </entry>
   
   <entry>
     <title>数据库编程技术与事务练习题</title>
@@ -47,7 +73,7 @@
     <link href="https://00yongshiwangzi.github.io/posts/ffde.html"/>
     <id>https://00yongshiwangzi.github.io/posts/ffde.html</id>
     <published>2020-11-03T12:41:19.072Z</published>
-    <updated>2020-11-03T12:45:33.494Z</updated>
+    <updated>2020-11-12T10:15:12.000Z</updated>
     
     
       
