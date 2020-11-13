@@ -6,7 +6,7 @@
   <link href="https://00yongshiwangzi.github.io/atom.xml" rel="self"/>
   
   <link href="https://00yongshiwangzi.github.io/"/>
-  <updated>2020-11-12T10:16:03.458Z</updated>
+  <updated>2020-11-13T11:44:41.178Z</updated>
   <id>https://00yongshiwangzi.github.io/</id>
   
   <author>
@@ -17,11 +17,36 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>python爬虫初体验</title>
+    <link href="https://00yongshiwangzi.github.io/posts/1458.html"/>
+    <id>https://00yongshiwangzi.github.io/posts/1458.html</id>
+    <published>2020-11-13T11:44:48.006Z</published>
+    <updated>2020-11-13T11:44:41.178Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;本人第一次接触爬虫，参考其他大佬的文章试着爬取了58同城兼职网页，网址为&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="python" scheme="https://00yongshiwangzi.github.io/categories/python/"/>
+    
+    
+    <category term="python" scheme="https://00yongshiwangzi.github.io/tags/python/"/>
+    
+  </entry>
+  
+  <entry>
     <title>sql server 总复习</title>
     <link href="https://00yongshiwangzi.github.io/posts/cd1a.html"/>
     <id>https://00yongshiwangzi.github.io/posts/cd1a.html</id>
     <published>2020-11-12T10:15:38.554Z</published>
-    <updated>2020-11-12T10:16:03.458Z</updated>
+    <updated>2020-11-13T11:44:37.394Z</updated>
     
     
       

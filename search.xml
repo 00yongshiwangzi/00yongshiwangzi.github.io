@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>python爬虫初体验</title>
+      <link href="posts/1458.html"/>
+      <url>posts/1458.html</url>
+      
+        <content type="html"><![CDATA[<p>本人第一次接触爬虫，参考其他大佬的文章试着爬取了58同城兼职网页，网址为<a href="https://zz.58.com/zplvyoujiudian">https://zz.58.com/zplvyoujiudian</a><br>1.实现的功能为将页面上的招聘信息题目爬取出来放到指定的txt文件中。<br>2.如果提示某个模块没有安装的话，需要先安装对应的模块，具体方法可以去网上搜一下，一般用pip就行了。<br>2.想要实现翻页操作要找到不同页面url的规律，这个网站的规律很简单，比如网址后加上/pn1就是第一页，加上/pn2就是第二页，所以用for循环可以轻松实现翻页操作。</p><p>代码如下：</p><pre class=" language-py"><code class="language-py">#导入本代码需要用到的模块import requestsfrom bs4 import BeautifulSoupimport  re  #正则#指定爬取数据所存放的文件路径f=open(r"C:\Users\dell\Desktop\爬虫.txt","w")#设置请求头，模仿浏览器访问headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.149 Safari/537.36'}#设置想要爬取的网页链接，用循环进行翻页操作来爬取多个页面for page in range(1,11):     print('************************************正在爬取第{}*********************************'.format(page))    url = 'https://zz.58.com/zplvyoujiudian/pn{}'.format(page)    #做数据解析前的准备    response = requests.get(url, headers=headers)    content = response.content    soup = BeautifulSoup(content, 'html.parser')    #获取所有兼职名，并存储在一个列表里    name_list = soup.find_all('span',attrs={'class':'name'})    for name in name_list:        # re.sub(r'\xa0...+\d','',re.sub('\n|New','',item.get_text()))  #正则去除多余内容        f.write(re.sub(r'\xa0...+\d','',re.sub('\n|New','',name.get_text())))        f.write("\n")f.close</code></pre><p><img src="https://img-blog.csdnimg.cn/20201113193309358.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1ODEzOTgw,size_16,color_FFFFFF,t_70#pic_center" alt="执行后获取的数据"><br>本人第一次体验python爬虫，还是很兴奋的，以后会试着进行更深入的爬虫，如果有错误，还望指出。</p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      <categories>
+          
+          <category> python </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> python </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>sql server 总复习</title>
       <link href="posts/cd1a.html"/>
       <url>posts/cd1a.html</url>
