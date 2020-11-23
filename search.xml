@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>一个菜鸡的祥云杯wp</title>
+      <link href="posts/f07a.html"/>
+      <url>posts/f07a.html</url>
+      
+        <content type="html"><![CDATA[<p>这次祥云杯除了签到题就搞出来一个杂项，这个wp主要是记录了我做题时的思路，也走了不少弯路，记录一下，希望以后可以做出两道，三道，慢慢进步！</p><h1 id="MISC"><a href="#MISC" class="headerlink" title="MISC"></a>MISC</h1><h2 id="签到题"><a href="#签到题" class="headerlink" title="签到题"></a>签到题</h2><p><img src="https://img-blog.csdnimg.cn/20201123101335872.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1ODEzOTgw,size_16,color_FFFFFF,t_70#pic_center" alt="签到题"><br>看着这熟悉的编码形式，直接进行base64解码，得到flag（注意不用加=）<br><img src="https://img-blog.csdnimg.cn/20201123101508333.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1ODEzOTgw,size_16,color_FFFFFF,t_70#pic_center" alt="base64解密后"></p><pre class=" language-s"><code class="language-s">flag{qq_group_826566040}</code></pre><h2 id="进制反转"><a href="#进制反转" class="headerlink" title="进制反转"></a>进制反转</h2><p><a href="https://pan.baidu.com/s/1r1Hqd2Bu3xqa-bo7p-GNEw">题目附件链接</a><br>提取码：biw9<br><img src="https://img-blog.csdnimg.cn/20201123101842506.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1ODEzOTgw,size_16,color_FFFFFF,t_70#pic_center" alt="进制反转"><br>下载附件后，是一个.rar压缩包，双击打开时，发现提示文件已损坏，打不开。<br><img src="https://img-blog.csdnimg.cn/20201123102342319.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1ODEzOTgw,size_16,color_FFFFFF,t_70#pic_center"><br>然后想到题目中的“有时候还是手机好用”这句话，然后把压缩包发送到手机上，看能不能打开<br><img src="https://img-blog.csdnimg.cn/20201123102637266.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1ODEzOTgw,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>用手机打开，发现rar文件里包含了一个flag.wav文件，上网查了一下，<img src="https://img-blog.csdnimg.cn/20201123102826152.png#pic_center" alt="wav"><br>于是想要在手机上下载这个wav文件，却发现下载不了<br><img src="https://img-blog.csdnimg.cn/2020112310291285.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1ODEzOTgw,size_16,color_FFFFFF,t_70#pic_center"><br>能看见，就是下载不了，气不气？<br>然后又回到电脑上，手机可以打开，电脑却报错说文件损坏，肯定是有问题。然后查看了一下是否进行了压缩包伪加密，zip文件和rar文件的伪加密方法不一样，具体可以去其他文章进行了解，发现这个rar压缩包确实进行了伪加密。（rar压缩包判断方法为将压缩包放入winhex中，查看第14个十六进制数后面的那个数是0还是4，是4表示进行了伪加密，将4改为0就可以解除伪加密。）<br><img src="https://img-blog.csdnimg.cn/20201123103239784.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1ODEzOTgw,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>发现第14项十六进制数的后面一位为4，将4改为0，保存文件，成功打开该rar压缩包。<br><img src="https://img-blog.csdnimg.cn/20201123120856608.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1ODEzOTgw,size_16,color_FFFFFF,t_70#pic_center"><br><img src="https://img-blog.csdnimg.cn/20201123121619790.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1ODEzOTgw,size_16,color_FFFFFF,t_70#pic_center" alt="成功打开rar压缩包"><br>成功得到其中的flag.wav文件，然后双击打开，发现打开不了：<br><img src="https://img-blog.csdnimg.cn/20201123121805616.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1ODEzOTgw,size_16,color_FFFFFF,t_70#pic_center"><br>暂时打不开，就放入winhex里，看看是哪点出了问题，然后在最后发现一个提示：<br><img src="https://img-blog.csdnimg.cn/20201123153909729.png#pic_center" alt="提示"><br>flag is the song’sname   flag是这个歌的名字<br>看来必须得听到这个wav文件的内容才行<br>既然是和音频相关的文件，那就试着放入audacity中<br><img src="https://img-blog.csdnimg.cn/20201123152827676.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1ODEzOTgw,size_16,color_FFFFFF,t_70#pic_center"><br>发现无法识别，那就按照他说的方法试试，直接导入原始数据<br><img src="https://img-blog.csdnimg.cn/20201123153117840.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1ODEzOTgw,size_16,color_FFFFFF,t_70#pic_center"><br><img src="https://img-blog.csdnimg.cn/20201123153157368.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1ODEzOTgw,size_16,color_FFFFFF,t_70#pic_center" alt="成功导入"><br>导入成功，听了一下，不像是一首歌，感觉怪怪的，又返回去看了看题目，题目是“进制反转”，我这还没反转了，得到的歌是不是反过来的？然后尝试着用au将这段音频反过来<img src="https://img-blog.csdnimg.cn/20201123154456320.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1ODEzOTgw,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>再次听了一下，感觉像是一首歌了，就是太快了，然后放慢0.7倍速，再把声音调高一点，成功得到一段听起来挺正常的音乐文件。<br>最后就是判断这是哪首歌了，也许是我的音频文件处理的不好，各种听歌识曲都没有听出来，本人英语又比较差，这首英文歌就是听不出来，最后一个朋友去求救英语老师，才得到这首歌的名字:  Too Good At Goodbyes（英语老师不愧是英语老师!）<br>结合题目中对格式的要求，全部为大写，所以最后的flag为：</p><pre class=" language-t"><code class="language-t">flag{GOODATGOODBYES}</code></pre><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      <categories>
+          
+          <category> CTF题 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> CTF </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>python爬虫初体验</title>
       <link href="posts/1458.html"/>
       <url>posts/1458.html</url>

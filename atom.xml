@@ -6,7 +6,7 @@
   <link href="https://00yongshiwangzi.github.io/atom.xml" rel="self"/>
   
   <link href="https://00yongshiwangzi.github.io/"/>
-  <updated>2020-11-13T11:44:41.178Z</updated>
+  <updated>2020-11-23T08:04:15.785Z</updated>
   <id>https://00yongshiwangzi.github.io/</id>
   
   <author>
@@ -17,11 +17,37 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>一个菜鸡的祥云杯wp</title>
+    <link href="https://00yongshiwangzi.github.io/posts/f07a.html"/>
+    <id>https://00yongshiwangzi.github.io/posts/f07a.html</id>
+    <published>2020-11-23T08:02:33.529Z</published>
+    <updated>2020-11-23T08:04:15.785Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;这次祥云杯除了签到题就搞出来一个杂项，这个wp主要是记录了我做题时的思路，也走了不少弯路，记录一下，希望以后可以做出两道，三道，慢慢进步！&lt;/p&gt;
+&lt;h1 id=&quot;MISC&quot;&gt;&lt;a href=&quot;#MISC&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="CTF题" scheme="https://00yongshiwangzi.github.io/categories/CTF%E9%A2%98/"/>
+    
+    
+    <category term="CTF" scheme="https://00yongshiwangzi.github.io/tags/CTF/"/>
+    
+  </entry>
+  
+  <entry>
     <title>python爬虫初体验</title>
     <link href="https://00yongshiwangzi.github.io/posts/1458.html"/>
     <id>https://00yongshiwangzi.github.io/posts/1458.html</id>
     <published>2020-11-13T11:44:48.006Z</published>
-    <updated>2020-11-13T11:44:41.178Z</updated>
+    <updated>2020-11-13T11:45:17.129Z</updated>
     
     
       
