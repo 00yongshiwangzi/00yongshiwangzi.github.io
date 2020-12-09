@@ -70,10 +70,3 @@
     }
 }
 
-@font-face{
- font-family: 'myFont';
- src: url('../font/pili.ttf');
-}
-.diyFont{
- font-family: 'myFont';
-}
