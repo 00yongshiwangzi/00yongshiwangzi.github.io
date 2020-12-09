@@ -69,3 +69,11 @@
         font-size: 1.1rem;
     }
 }
+
+@font-face{
+ font-family: 'myFont';
+ src: url('../font/pili.ttf');
+}
+.diyFont{
+ font-family: 'myFont';
+}
