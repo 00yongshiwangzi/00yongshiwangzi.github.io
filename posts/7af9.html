@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="CTF web每日一题, 00yongshiwangzi">
+    <meta name="keywords" content="CTF web练习题, 00yongshiwangzi">
     <meta name="description" content="努力的话，天才也可以超越！">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>CTF web每日一题 | Cy_Dragon Blog</title>
+    <title>CTF web练习题 | Cy_Dragon Blog</title>
     <link rel="icon" type="image/jpeg" href="/logo.jpg">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -314,7 +314,7 @@
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">CTF web每日一题</h1>
+                    <h1 class="description center-align post-title">CTF web练习题</h1>
                 </div>
             </div>
         </div>
@@ -463,21 +463,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-01-04
+                    2021-02-03
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2k
+                    1.9k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    8 分
+                    7 分
                 </div>
                 
 
@@ -492,7 +492,7 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="CTF-web每日一题"><a href="#CTF-web每日一题" class="headerlink" title="CTF web每日一题"></a>CTF web每日一题</h1><h2 id="第一天：BUGKU-Web13-2020-12-28"><a href="#第一天：BUGKU-Web13-2020-12-28" class="headerlink" title="第一天：BUGKU Web13(2020.12.28)"></a>第一天：BUGKU Web13(2020.12.28)</h2><p><img src="https://img-blog.csdnimg.cn/20201228193055419.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1ODEzOTgw,size_16,color_FFFFFF,t_70"><br>打开题目环境<br><img src="https://img-blog.csdnimg.cn/20201228193417474.png"></p>
+                <h1 id="CTF-web练习题"><a href="#CTF-web练习题" class="headerlink" title="CTF web练习题"></a>CTF web练习题</h1><h2 id="BUGKU-Web13-2020-12-28"><a href="#BUGKU-Web13-2020-12-28" class="headerlink" title="BUGKU Web13(2020.12.28)"></a>BUGKU Web13(2020.12.28)</h2><p><img src="https://img-blog.csdnimg.cn/20201228193055419.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1ODEzOTgw,size_16,color_FFFFFF,t_70"><br>打开题目环境<br><img src="https://img-blog.csdnimg.cn/20201228193417474.png" alt="在这里插入图片描述"></p>
 <p>提示让看源码，于是直接F12查看源码：<br><img src="https://img-blog.csdnimg.cn/20201228193849644.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1ODEzOTgw,size_16,color_FFFFFF,t_70"><br>发现一段js代码，里面p1和p2的值应该是url编码,用url解码试试：<br><img src="https://img-blog.csdnimg.cn/20201228194211485.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1ODEzOTgw,size_16,color_FFFFFF,t_70"><br>得到一段代码。</p>
 <pre class=" language-js"><code class="language-js"><span class="token keyword">var</span> p1 <span class="token operator">=</span> <span class="token string">'function checkSubmit(){var a=document.getElementById("password");if("undefined"!=typeof a){if("67d709b2b'</span><span class="token punctuation">;</span>
 <span class="token keyword">var</span> p2 <span class="token operator">=</span> <span class="token string">'aa648cf6e87a7114f1"==a.value)return!0;alert("Error");a.focus();return!1}}document.getElementById("levelQuest").onsubmit=checkSubmit;'</span><span class="token punctuation">;</span>
@@ -502,7 +502,7 @@
 <p>unescape() 函数可对通过 escape() 编码的字符串进行解码。</p>
 </blockquote>
 <p>但是这段代码里没有出现escape()，所以应该没有进行编码，直接将p1、’54aa2’、p1进行拼接，得到：67d709b2b54aa2aa648cf6e87a7114f1<br>输入框中，得到flag<br><img src="https://img-blog.csdnimg.cn/20201228195348588.png"><br>然后我看到一个大佬直接将源代码里发现的那一串代码放到F12的Console中执行，将eval改为alter可以直接弹出代码和拼接过的字符串，试了一下，确实可以。<br><img src="https://img-blog.csdnimg.cn/20201228195706757.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1ODEzOTgw,size_16,color_FFFFFF,t_70"></p>
-<h2 id="第二天：BUGKU-Web14-2020-12-29"><a href="#第二天：BUGKU-Web14-2020-12-29" class="headerlink" title="第二天：BUGKU Web14(2020.12.29)"></a>第二天：BUGKU Web14(2020.12.29)<img src="https://img-blog.csdnimg.cn/20201231001117773.png"></h2><p>1.打开网页，发现只有上图的一个可以点击的地方，直接点击，进入一个新的页面<br><img src="https://img-blog.csdnimg.cn/20201231001530839.png"><br>同时注意到网址的变化：</p>
+<h2 id="BUGKU-Web14-2020-12-29"><a href="#BUGKU-Web14-2020-12-29" class="headerlink" title="BUGKU Web14(2020.12.29)"></a>BUGKU Web14(2020.12.29)<img src="https://img-blog.csdnimg.cn/20201231001117773.png"></h2><p>1.打开网页，发现只有上图的一个可以点击的地方，直接点击，进入一个新的页面<br><img src="https://img-blog.csdnimg.cn/20201231001530839.png"><br>同时注意到网址的变化：</p>
 <blockquote>
 <p><a target="_blank" rel="noopener" href="http://114.67.246.176:17268/index.php?file=show.php">http://114.67.246.176:17268/index.php?file=show.php</a></p>
 </blockquote>
@@ -532,8 +532,8 @@
 ?></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span></code></pre>
 <p>请参考<a target="_blank" rel="noopener" href="https://blog.csdn.net/destiny1507/article/details/82347371?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromBaidu-2.control&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromBaidu-2.control">php://filter 的使用</a></p>
-<h2 id="第三天：BUGKU-Web15-2020-12-30"><a href="#第三天：BUGKU-Web15-2020-12-30" class="headerlink" title="第三天：BUGKU Web15(2020.12.30)"></a>第三天：BUGKU Web15(2020.12.30)</h2><p>打开网页，如下图<br><img src="https://img-blog.csdnimg.cn/20201231003303293.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1ODEzOTgw,size_16,color_FFFFFF,t_70"><br>直接说密码是五位数字，猜测需要直接爆破<br>在Bp中设置好五位数字的范围，开始爆破<br><img src="https://img-blog.csdnimg.cn/20201231003400454.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1ODEzOTgw,size_16,color_FFFFFF,t_70"><br>成功爆破出密码为12486<br><img src="https://img-blog.csdnimg.cn/20201231003530901.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1ODEzOTgw,size_16,color_FFFFFF,t_70"><br>输入密码，得到flag</p>
-<h2 id="第四天：BUGKU-Web16-2020-12-31"><a href="#第四天：BUGKU-Web16-2020-12-31" class="headerlink" title="第四天：BUGKU Web16(2020.12.31)"></a>第四天：BUGKU Web16(2020.12.31)</h2><p>打开题目，发现一串64位的md5，也没解出来，先放着。<br>提示说备份是个好习惯，说明网页可能存在备份文件，于是用御剑进行扫描<br><img src="https://img-blog.csdnimg.cn/20201231004640887.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1ODEzOTgw,size_16,color_FFFFFF,t_70"><br>明显<a target="_blank" rel="noopener" href="http://114.67.246.176:14500/index.php.apk%E6%98%AF%E5%A4%87%E4%BB%BD%E6%96%87%E4%BB%B6%E8%BF%9B%E5%85%A5%E7%BD%91%E9%A1%B5%EF%BC%8C%E7%8E%B0%E5%9C%A8%E5%A4%87%E4%BB%BD%E6%96%87%E4%BB%B6">http://114.67.246.176:14500/index.php.apk是备份文件进入网页，现在备份文件</a><br>打开发现一段PHP代码</p>
+<h2 id="BUGKU-Web15-2020-12-30"><a href="#BUGKU-Web15-2020-12-30" class="headerlink" title="BUGKU Web15(2020.12.30)"></a>BUGKU Web15(2020.12.30)</h2><p>打开网页，如下图<br><img src="https://img-blog.csdnimg.cn/20201231003303293.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1ODEzOTgw,size_16,color_FFFFFF,t_70"><br>直接说密码是五位数字，猜测需要直接爆破<br>在Bp中设置好五位数字的范围，开始爆破<br><img src="https://img-blog.csdnimg.cn/20201231003400454.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1ODEzOTgw,size_16,color_FFFFFF,t_70"><br>成功爆破出密码为12486<br><img src="https://img-blog.csdnimg.cn/20201231003530901.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1ODEzOTgw,size_16,color_FFFFFF,t_70"><br>输入密码，得到flag</p>
+<h2 id="BUGKU-Web16-2020-12-31"><a href="#BUGKU-Web16-2020-12-31" class="headerlink" title="BUGKU Web16(2020.12.31)"></a>BUGKU Web16(2020.12.31)</h2><p>打开题目，发现一串64位的md5，也没解出来，先放着。<br>提示说备份是个好习惯，说明网页可能存在备份文件，于是用御剑进行扫描<br><img src="https://img-blog.csdnimg.cn/20201231004640887.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1ODEzOTgw,size_16,color_FFFFFF,t_70"><br>明显<a target="_blank" rel="noopener" href="http://114.67.246.176:14500/index.php.apk%E6%98%AF%E5%A4%87%E4%BB%BD%E6%96%87%E4%BB%B6%E8%BF%9B%E5%85%A5%E7%BD%91%E9%A1%B5%EF%BC%8C%E7%8E%B0%E5%9C%A8%E5%A4%87%E4%BB%BD%E6%96%87%E4%BB%B6">http://114.67.246.176:14500/index.php.apk是备份文件进入网页，现在备份文件</a><br>打开发现一段PHP代码</p>
 <pre class=" language-php"><code class="language-php"><span class="token delimiter">&lt;?php</span>
 <span class="token comment" spellcheck="true">/**
  * Created by PhpStorm.
@@ -586,7 +586,7 @@
 <p>python sqlmap.py -u <a target="_blank" rel="noopener" href="http://114.67.246.176:12067/index.php">http://114.67.246.176:12067/index.php</a> –data “id=1” -D skctf -T fl4g –dump</p>
 </blockquote>
 <p><img src="https://img-blog.csdnimg.cn/20201231141836529.png"><br>得到flag。<br>sqlmap真好用~~</p>
-<h2 id="第五天：BUGKU-Web34-2021-01-01"><a href="#第五天：BUGKU-Web34-2021-01-01" class="headerlink" title="第五天：BUGKU Web34(2021.01.01)"></a>第五天：BUGKU Web34(2021.01.01)</h2><p><img src="https://img-blog.csdnimg.cn/20210101205923561.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1ODEzOTgw,size_16,color_FFFFFF,t_70"><br>提示说文件包含，那肯定是有文件包含漏洞，先打开环境<br><img src="https://img-blog.csdnimg.cn/20210101211003669.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1ODEzOTgw,size_16,color_FFFFFF,t_70"></p>
+<h2 id="BUGKU-Web34-2021-01-01"><a href="#BUGKU-Web34-2021-01-01" class="headerlink" title="BUGKU Web34(2021.01.01)"></a>BUGKU Web34(2021.01.01)</h2><p><img src="https://img-blog.csdnimg.cn/20210101205923561.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1ODEzOTgw,size_16,color_FFFFFF,t_70"><br>提示说文件包含，那肯定是有文件包含漏洞，先打开环境<br><img src="https://img-blog.csdnimg.cn/20210101211003669.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1ODEzOTgw,size_16,color_FFFFFF,t_70"></p>
 <blockquote>
 <p><a target="_blank" rel="noopener" href="http://114.67.246.176:18136/index.php?file=hello.php">http://114.67.246.176:18136/index.php?file=hello.php</a></p>
 </blockquote>
@@ -601,9 +601,9 @@
 <p><img src="https://img-blog.csdnimg.cn/20210101212237609.png"><br>接下来就是尝试上传一句话木马并且菜刀连接了。<br>用bp抓包进行测试，可以看到，虽然用普通的一句话木马写的图片成功上传上去了，但是返回的包里php代码被过滤了，所以一句话木马是不会被执行的。<br><img src="https://img-blog.csdnimg.cn/20210101212729128.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1ODEzOTgw,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>最后也不是很懂，用这道题的评论区里有一个大佬给的代码成功连接了，具体还不是很懂，应该是文件包含漏洞和文件上传漏洞结合产生的一个独特的代码。评论区的大佬说这道题必须结合文件包含漏洞才能连接上，我试了好几种一句话木马确实都没有连上。</p>
 <pre><code>&lt;script language=php&gt;echo 'a'; eval($_POST['pass']);&lt;/script&gt;</code></pre>
 <p><img src="https://img-blog.csdnimg.cn/20210101220404316.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1ODEzOTgw,size_16,color_FFFFFF,t_70"><br>这里还需要注意一点：地址也必须用文件包含的格式，图片地址要放到file=的后面，才能连接上。<br>菜刀连接，在根目录下得到flag。</p>
-<h2 id="第六天：攻防世界进阶区001-2021-01-02"><a href="#第六天：攻防世界进阶区001-2021-01-02" class="headerlink" title="第六天：攻防世界进阶区001(2021.01.02)"></a>第六天：攻防世界进阶区001(2021.01.02)</h2><p>题目：baby_web<br><img src="https://img-blog.csdnimg.cn/20210104192921958.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1ODEzOTgw,size_16,color_FFFFFF,t_70"><br>打开题目环境：<br><img src="https://img-blog.csdnimg.cn/20210104193012140.png"><br>根据提示中的初始页面，我们把1.php改成index.php，发现网页马上跳转回1.php了，说明有问题，我们通过抓包来尝试访问index.php<br>然后成功发现flag<br><img src="https://img-blog.csdnimg.cn/20210104194104891.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1ODEzOTgw,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
-<h2 id="第七天：攻防世界进阶区002-2021-01-03"><a href="#第七天：攻防世界进阶区002-2021-01-03" class="headerlink" title="第七天：攻防世界进阶区002(2021.01.03)"></a>第七天：攻防世界进阶区002(2021.01.03)</h2><p>题目：Training-WWW-Robots<br><img src="https://img-blog.csdnimg.cn/20210104194534955.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1ODEzOTgw,size_16,color_FFFFFF,t_70"><br>打开环境<br><img src="https://img-blog.csdnimg.cn/20210104194627715.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1ODEzOTgw,size_16,color_FFFFFF,t_70"><br>咱英语不好，开个翻译看看：<br><img src="https://img-blog.csdnimg.cn/20210104194702264.png"><br>按照提示在url后面加上robots.txt,访问页面<br><img src="https://img-blog.csdnimg.cn/20210104195451394.png"><br>然后发现目录中有fl0g.php,直接访问，得到flag<br><img src="https://img-blog.csdnimg.cn/20210104195550551.png"></p>
-<h2 id="第八天：攻防世界进阶区004-2021-01-04"><a href="#第八天：攻防世界进阶区004-2021-01-04" class="headerlink" title="第八天：攻防世界进阶区004(2021.01.04)"></a>第八天：攻防世界进阶区004(2021.01.04)</h2><p>题目：Web_php_include<br>打开环境，发现php代码<img src="https://img-blog.csdnimg.cn/20210104211935707.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1ODEzOTgw,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>需要get一个参数page,但是”php://“被替换为空，我们可以试着用大小写绕过<br><img src="https://img-blog.csdnimg.cn/20210104212958133.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1ODEzOTgw,size_16,color_FFFFFF,t_70"><br>发现里面有个疑似flag的php文件，于是使用cat命令读取，在源码中发现flag.<br><img src="https://img-blog.csdnimg.cn/20210104214048292.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1ODEzOTgw,size_16,color_FFFFFF,t_70"><br>这道题还有其他写法，参考<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_43818995/article/details/104164700">攻防世界-Web_php_include （四种解法）</a></p>
+<h2 id="攻防世界进阶区001-2021-01-02"><a href="#攻防世界进阶区001-2021-01-02" class="headerlink" title="攻防世界进阶区001(2021.01.02)"></a>攻防世界进阶区001(2021.01.02)</h2><p>题目：baby_web<br><img src="https://img-blog.csdnimg.cn/20210104192921958.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1ODEzOTgw,size_16,color_FFFFFF,t_70"><br>打开题目环境：<br><img src="https://img-blog.csdnimg.cn/20210104193012140.png"><br>根据提示中的初始页面，我们把1.php改成index.php，发现网页马上跳转回1.php了，说明有问题，我们通过抓包来尝试访问index.php<br>然后成功发现flag<br><img src="https://img-blog.csdnimg.cn/20210104194104891.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1ODEzOTgw,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h2 id="攻防世界进阶区002-2021-01-03"><a href="#攻防世界进阶区002-2021-01-03" class="headerlink" title="攻防世界进阶区002(2021.01.03)"></a>攻防世界进阶区002(2021.01.03)</h2><p>题目：Training-WWW-Robots<br><img src="https://img-blog.csdnimg.cn/20210104194534955.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1ODEzOTgw,size_16,color_FFFFFF,t_70"><br>打开环境<br><img src="https://img-blog.csdnimg.cn/20210104194627715.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1ODEzOTgw,size_16,color_FFFFFF,t_70"><br>咱英语不好，开个翻译看看：<br><img src="https://img-blog.csdnimg.cn/20210104194702264.png"><br>按照提示在url后面加上robots.txt,访问页面<br><img src="https://img-blog.csdnimg.cn/20210104195451394.png"><br>然后发现目录中有fl0g.php,直接访问，得到flag<br><img src="https://img-blog.csdnimg.cn/20210104195550551.png"></p>
+<h2 id="攻防世界进阶区004-2021-01-04"><a href="#攻防世界进阶区004-2021-01-04" class="headerlink" title="攻防世界进阶区004(2021.01.04)"></a>攻防世界进阶区004(2021.01.04)</h2><p>题目：Web_php_include<br>打开环境，发现php代码<img src="https://img-blog.csdnimg.cn/20210104211935707.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1ODEzOTgw,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>需要get一个参数page,但是”php://“被替换为空，我们可以试着用大小写绕过<br><img src="https://img-blog.csdnimg.cn/20210104212958133.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1ODEzOTgw,size_16,color_FFFFFF,t_70"><br>发现里面有个疑似flag的php文件，于是使用cat命令读取，在源码中发现flag.<br><img src="https://img-blog.csdnimg.cn/20210104214048292.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1ODEzOTgw,size_16,color_FFFFFF,t_70"><br>这道题还有其他写法，参考<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_43818995/article/details/104164700">攻防世界-Web_php_include （四种解法）</a></p>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
